@@ -27507,11 +27507,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lzumarraga\\OneDrive\\2018-19\\Interfaces\\Repositorio\\Desarrollo de Interfaces\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive.csproj",
+      "projectUniqueName": "C:\\Users\\lzumarraga\\OneDrive\\2018-19\\REPOSITORIOS\\DesarrolloDeInterfaces\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive.csproj",
       "projectName": "08-FinalLayoutResponsive",
-      "projectPath": "C:\\Users\\lzumarraga\\OneDrive\\2018-19\\Interfaces\\Repositorio\\Desarrollo de Interfaces\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive.csproj",
+      "projectPath": "C:\\Users\\lzumarraga\\OneDrive\\2018-19\\REPOSITORIOS\\DesarrolloDeInterfaces\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive.csproj",
       "packagesPath": "C:\\Users\\lzumarraga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lzumarraga\\OneDrive\\2018-19\\Interfaces\\Repositorio\\Desarrollo de Interfaces\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive\\obj\\",
+      "outputPath": "C:\\Users\\lzumarraga\\OneDrive\\2018-19\\REPOSITORIOS\\DesarrolloDeInterfaces\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [

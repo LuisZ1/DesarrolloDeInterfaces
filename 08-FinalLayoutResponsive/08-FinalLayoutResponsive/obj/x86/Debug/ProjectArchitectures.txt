@@ -1,1 +1,1 @@
-C:\Users\lzumarraga\OneDrive\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\08-FinalLayoutResponsive.csproj;x86
+C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\08-FinalLayoutResponsive.csproj;x86
