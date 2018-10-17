@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="_05_VariableSizeWrapGrid.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_05_VariableSizeWrapGrid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    
+        <VariableSizedWrapGrid Orientation="Horizontal">
+            <Button Content="Botón 1" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Background="Blue" Foreground="WHITE" Height="auto" Width="auto" 
+                FontFamily="verdana" BorderBrush="Yellow" FontWeight="Bold" FontSize="16"/>
+
+            <Button Content="Botón 1" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Background="Blue" Foreground="WHITE" Height="auto" Width="auto" 
+                FontFamily="verdana" BorderBrush="Yellow" FontWeight="Bold" FontSize="16"/>
+
+            <Button Content="Botón 1" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Background="Blue" Foreground="WHITE" Height="auto" Width="auto" 
+                FontFamily="verdana" BorderBrush="Yellow" FontWeight="Bold" FontSize="16"/>
+
+            <Button Content="Botón 1" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Background="Blue" Foreground="WHITE" Height="auto" Width="auto" 
+                FontFamily="verdana" BorderBrush="Yellow" FontWeight="Bold" FontSize="16"/>
+
+            <Button Content="Botón 1" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Background="Blue" Foreground="WHITE" Height="auto" Width="auto" 
+                FontFamily="verdana" BorderBrush="Yellow" FontWeight="Bold" FontSize="16"/>
+            <Button>
+                <Button.Content>Botón 2</Button.Content>
+                <Button.HorizontalAlignment>Center</Button.HorizontalAlignment>
+                <Button.VerticalAlignment>Center</Button.VerticalAlignment>
+                <Button.Background>Green</Button.Background>
+                <Button.Foreground>WHITE</Button.Foreground>
+                <Button.FontFamily>Verdana</Button.FontFamily>
+                <Button.BorderBrush>PINK</Button.BorderBrush>
+                <Button.FontWeight>Bold</Button.FontWeight>
+            </Button>
+        </VariableSizedWrapGrid>
+    
+</Page>
+

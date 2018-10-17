@@ -1,0 +1,1 @@
+C:\Users\lzumarraga\OneDrive\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\04-Botones y propiedades UWP\04-Botones y propiedades UWP\04-Botones y propiedades UWP.csproj;x86

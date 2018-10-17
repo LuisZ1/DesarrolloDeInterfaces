@@ -1,0 +1,43 @@
+﻿<Page
+    x:Class="_06_RelativePanel.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_06_RelativePanel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <RelativePanel BorderBrush="Gray" BorderThickness="1">
+        <StackPanel x:ConnectionId='2' Orientation="Horizontal" Name="botoneswapos" BorderBrush="Gray" BorderThickness="1">
+            <AppBarButton Icon="Audio"></AppBarButton>
+            <AppBarButton Icon="AddFriend"></AppBarButton>
+            <AppBarButton Icon="Camera"></AppBarButton>
+            <AppBarButton Icon="Bullets"></AppBarButton>
+        </StackPanel>
+        <ListView x:ConnectionId='3' Name="listaWapa" RelativePanel.Below="botoneswapos" RelativePanel.AlignLeftWith="botoneswapos" 
+                  RelativePanel.AlignRightWith="botoneswapos" BorderBrush="Gray" BorderThickness="1" >
+            <x:String>Item 1</x:String>
+            <x:String>Item 2</x:String>
+            <x:String>Item 3</x:String>
+            <x:String>Item 4</x:String>
+            <x:String>Item 5</x:String>
+        </ListView>
+
+        <AppBarButton x:ConnectionId='4' Name="xbox" BorderBrush="Gray" BorderThickness="1" Icon="XboxOneConsole" RelativePanel.Below="listaWapa" RelativePanel.AlignRightWith="listaWapa"/>
+
+        <StackPanel x:ConnectionId='5'  Name="botonsitos1" Orientation="Horizontal" RelativePanel.Below="xbox"
+                    RelativePanel.AlignLeftWith="listaWapa"  BorderBrush="Gray" BorderThickness="1" RelativePanel.AlignBottomWithPanel="True">
+            <AppBarButton Icon="Back" HorizontalAlignment="Left"/>
+        </StackPanel>
+
+        <StackPanel x:ConnectionId='6'  Name="botonsitos2" Orientation="Horizontal" RelativePanel.Below="xbox" RelativePanel.AlignRightWith="listaWapa"
+                    RelativePanel.AlignLeftWith="xbox"  BorderBrush="Gray" BorderThickness="1" RelativePanel.AlignBottomWithPanel="True">
+            <AppBarButton Icon="Forward" HorizontalAlignment="Right" HorizontalContentAlignment="Right"/>
+        </StackPanel>
+
+        
+    </RelativePanel>
+
+</Page>
+

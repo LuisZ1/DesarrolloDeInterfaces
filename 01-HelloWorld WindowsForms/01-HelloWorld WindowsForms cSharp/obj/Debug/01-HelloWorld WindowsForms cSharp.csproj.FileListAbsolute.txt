@@ -1,0 +1,10 @@
+D:\LuisZ 18-19\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\01-HelloWorld WindowsForms\01-HelloWorld WindowsForms cSharp\bin\Debug\01-HelloWorld WindowsForms cSharp.exe.config
+D:\LuisZ 18-19\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\01-HelloWorld WindowsForms\01-HelloWorld WindowsForms cSharp\bin\Debug\01-HelloWorld WindowsForms cSharp.exe
+D:\LuisZ 18-19\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\01-HelloWorld WindowsForms\01-HelloWorld WindowsForms cSharp\bin\Debug\01-HelloWorld WindowsForms cSharp.pdb
+D:\LuisZ 18-19\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\01-HelloWorld WindowsForms\01-HelloWorld WindowsForms cSharp\obj\Debug\01-HelloWorld WindowsForms cSharp.csprojAssemblyReference.cache
+D:\LuisZ 18-19\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\01-HelloWorld WindowsForms\01-HelloWorld WindowsForms cSharp\obj\Debug\_01_HelloWorld_WindowsForms_cSharp.Form1.resources
+D:\LuisZ 18-19\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\01-HelloWorld WindowsForms\01-HelloWorld WindowsForms cSharp\obj\Debug\_01_HelloWorld_WindowsForms_cSharp.Properties.Resources.resources
+D:\LuisZ 18-19\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\01-HelloWorld WindowsForms\01-HelloWorld WindowsForms cSharp\obj\Debug\01-HelloWorld WindowsForms cSharp.csproj.GenerateResource.cache
+D:\LuisZ 18-19\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\01-HelloWorld WindowsForms\01-HelloWorld WindowsForms cSharp\obj\Debug\01-HelloWorld WindowsForms cSharp.csproj.CoreCompileInputs.cache
+D:\LuisZ 18-19\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\01-HelloWorld WindowsForms\01-HelloWorld WindowsForms cSharp\obj\Debug\01-HelloWorld WindowsForms cSharp.exe
+D:\LuisZ 18-19\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\01-HelloWorld WindowsForms\01-HelloWorld WindowsForms cSharp\obj\Debug\01-HelloWorld WindowsForms cSharp.pdb

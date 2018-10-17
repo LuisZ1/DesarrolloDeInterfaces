@@ -1,0 +1,20 @@
+﻿@model _03_MVC_Act1.Models.clsListadoPersona
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>vistaListado</title>
+</head>
+<body>
+    <div> 
+        @foreach(var clsPersona in Model.listaPersonas()) {
+        <p> @clsPersona.idPersona , @clsPersona.nombre, @clsPersona.apellidos </p>
+        }
+    </div>
+</body>
+</html>

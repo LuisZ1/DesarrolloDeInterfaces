@@ -1,0 +1,19 @@
+﻿@model _03_MVC_Act1.Models.clsPersona
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+<p>Hola, son las: @ViewData["Saludo"] </p>
+<p>Nombre: @Model.nombre </p>
+<p>Apellidos: @Model.apellidos</p>
+<p>F Nac: @Model.fechaNacimiento</p>
+<p>Direccion: @Model.direccion</p>
+<p>Telefono: @Model.telefono</p>
+<p>ID: @Model.idPersona</p>
+
+<a href="~/Views/Home/vistaListado.cshtml">Acceder al listado</a>
+<p>@Html.ActionLink("Ver lista","vistaListado","Home")</p>
+
+
+
