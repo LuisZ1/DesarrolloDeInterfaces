@@ -33,24 +33,25 @@
                 BorderBrush="Black" 
                 Margin="20" Padding="10" 
                 Name="dingdong">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" ></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <VariableSizedWrapGrid x:ConnectionId='6' Orientation="Horizontal" Name="Gilverto" Grid.Row="0" Grid.Column="0" RelativePanel.Below="Alfredo2">
-                <Rectangle Width="100" Height="100" Fill="Blue" Stroke="Red"/>
-                <Rectangle Width="100" Height="100" Fill="Red" Stroke="Red"/>
-                <Rectangle Width="100" Height="100" Fill="Green" Stroke="Red"/>
-                <Rectangle Width="100" Height="100" Fill="Purple" Stroke="Red"/>
-                <Rectangle Width="100" Height="100" Fill="Yellow" Stroke="Red"/>
-                <Rectangle Width="100" Height="100" Fill="pink" Stroke="Red"/>
-            </VariableSizedWrapGrid>
-
-                <VariableSizedWrapGrid x:ConnectionId='7' RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWith="Gilverto" Grid.Row="0" Grid.Column="1" Name="cuchufleta" RelativePanel.Below="Alfredo2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <VariableSizedWrapGrid x:ConnectionId='6' Orientation="Horizontal" Name="Gilverto" Grid.Row="0" Grid.Column="0" RelativePanel.Below="Alfredo2">
+                    <Rectangle Width="100" Height="100" Fill="Blue" Stroke="Red"/>
+                    <Rectangle Width="100" Height="100" Fill="Red" Stroke="Red"/>
+                    <Rectangle Width="100" Height="100" Fill="Green" Stroke="Red"/>
+                    <Rectangle Width="100" Height="100" Fill="Purple" Stroke="Red"/>
+                    <Rectangle Width="100" Height="100" Fill="Yellow" Stroke="Red"/>
+                    <Rectangle Width="100" Height="100" Fill="pink" Stroke="Red"/>
+                </VariableSizedWrapGrid>
+                <ScrollViewer x:ConnectionId='7' VerticalScrollBarVisibility="Auto" VerticalContentAlignment="Top" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWith="Gilverto" Grid.Row="0" Grid.Column="1" Name="cuchufleta" RelativePanel.Below="Alfredo2">
+                <VariableSizedWrapGrid x:ConnectionId='8' RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWith="Gilverto" Grid.Row="0" Grid.Column="1" Name="cuchufleta1" RelativePanel.Below="Alfredo2">
+                    
                     <Border BorderThickness="5" BorderBrush="Black" Margin="20" Padding="10" >
                         <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."  TextWrapping="Wrap"/>
                     </Border>
@@ -58,7 +59,9 @@
                     <Border BorderThickness="5" BorderBrush="Black" Margin="20" Padding="10">
                         <TextBlock Text="Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Luis aute irure dolor in reprehenderit"  TextWrapping="Wrap"/>
                     </Border>
+                    
                 </VariableSizedWrapGrid>
+                </ScrollViewer>
             </Grid>
         </Border>
         <Border x:ConnectionId='5' RelativePanel.Below="dingdong" Name="jum"

@@ -225,6 +225,16 @@ E:\Documentos\Onedrive\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\0
 E:\Documentos\Onedrive\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\MainPage.xbf
 E:\Documentos\Onedrive\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\XamlSaveStateFile.xml
 C:\Users\lzumarraga\OneDrive\2018-19\Interfaces\Repositorio\Desarrollo de Interfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\08-FinalLayoutResponsive.csprojAssemblyReference.cache
+C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\App.g.i.cs
+C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\App.g.cs
+C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\App.xaml
+C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\MainPage.xaml
+C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\App.xbf
+C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\MainPage.xbf
+C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\XamlSaveStateFile.xml
+C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\08-FinalLayoutResponsive.csprojAssemblyReference.cache
+C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\MainPage.g.i.cs
+C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\MainPage.g.cs
 C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\bin\x86\Debug\App.xbf
 C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\bin\x86\Debug\MainPage.xbf
 C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\bin\x86\Debug\08-FinalLayoutResponsive.xr.xml
@@ -349,17 +359,7 @@ C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-Fina
 C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\bin\x86\Debug\System.Xml.XDocument.dll
 C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\bin\x86\Debug\System.Xml.XmlDocument.dll
 C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\bin\x86\Debug\System.Xml.XmlSerializer.dll
-C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\08-FinalLayoutResponsive.csprojAssemblyReference.cache
-C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\App.g.i.cs
-C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\App.g.cs
-C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\MainPage.g.i.cs
-C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\MainPage.g.cs
 C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\XamlTypeInfo.g.cs
-C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\App.xaml
-C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\MainPage.xaml
-C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\App.xbf
-C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\MainPage.xbf
-C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\XamlSaveStateFile.xml
 C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\08-FinalLayoutResponsive.csproj.CoreCompileInputs.cache
 C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\08-FinalLayoutResponsive.csproj.CopyComplete
 C:\Users\lzumarraga\OneDrive\2018-19\REPOSITORIOS\DesarrolloDeInterfaces\08-FinalLayoutResponsive\08-FinalLayoutResponsive\obj\x86\Debug\08-FinalLayoutResponsive.exe
