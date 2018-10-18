@@ -27501,24 +27501,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lzumarraga\\.nuget\\packages\\": {},
+    "C:\\Users\\Luis Z\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lzumarraga\\OneDrive\\2018-19\\REPOSITORIOS\\DesarrolloDeInterfaces\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive.csproj",
+      "projectUniqueName": "E:\\Documentos\\Onedrive\\2018-19\\REPOSITORIOS\\DesarrolloDeInterfaces\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive.csproj",
       "projectName": "08-FinalLayoutResponsive",
-      "projectPath": "C:\\Users\\lzumarraga\\OneDrive\\2018-19\\REPOSITORIOS\\DesarrolloDeInterfaces\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive.csproj",
-      "packagesPath": "C:\\Users\\lzumarraga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lzumarraga\\OneDrive\\2018-19\\REPOSITORIOS\\DesarrolloDeInterfaces\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive\\obj\\",
+      "projectPath": "E:\\Documentos\\Onedrive\\2018-19\\REPOSITORIOS\\DesarrolloDeInterfaces\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive.csproj",
+      "packagesPath": "C:\\Users\\Luis Z\\.nuget\\packages\\",
+      "outputPath": "E:\\Documentos\\Onedrive\\2018-19\\REPOSITORIOS\\DesarrolloDeInterfaces\\08-FinalLayoutResponsive\\08-FinalLayoutResponsive\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\lzumarraga\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Luis Z\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

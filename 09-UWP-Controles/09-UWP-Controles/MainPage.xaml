@@ -1,0 +1,146 @@
+﻿<Page
+    x:Class="_09_UWP_Controles.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_09_UWP_Controles"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!--F0 C0-->
+        <TextBlock Grid.Row="0" Grid.Column="0"
+            Margin="20" FontSize="30"
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            Text="Hola caracola"/>
+
+        <!--F0 C1-->
+        <StackPanel Grid.Row="0" Grid.Column="1"
+                    Orientation="Vertical" Padding="20"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Margin="10">Aceptar</Button>
+            <Button Margin="10">Cancelar</Button>
+        </StackPanel>
+
+        <!--F0 C2-->
+        <StackPanel Grid.Row="0" Grid.Column="2"
+                    Orientation="Vertical" Margin="5"
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+            <RadioButton GroupName="radios">
+                <StackPanel Orientation="Horizontal">
+                    <!-- <AppBarButton Icon="Accept"/> -->
+                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE8FB;"/>
+                    <TextBlock Text="Yes"/>
+                </StackPanel>
+            </RadioButton>
+            <RadioButton GroupName="radios">No</RadioButton>
+            <RadioButton GroupName="radios">Maybe</RadioButton>
+            <Button Margin="10">Go</Button>
+        </StackPanel>
+
+        <!--F0 C3-->
+        <Button Grid.Row="0" Grid.Column="3" 
+            Margin="0,0,0,0"
+            Content="Hello" ToolTipService.ToolTip="El señor de la noche" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+
+        <!--F1 C0-->
+        <Pivot Grid.Row="1" Grid.Column="0"
+            x:Name="rootPivot">
+            <PivotItem Header="Section 1">
+                <!--Pivot content goes here-->
+                <TextBlock Text="Content of section 1."/>
+            </PivotItem>
+            <PivotItem Header="Section 2">
+                <!--Pivot content goes here-->
+                <TextBlock Text="Content of section 2."/>
+            </PivotItem>
+            <PivotItem Header="Section 3">
+                <!--Pivot content goes here-->
+                <TextBlock Text="Content of section 3."/>
+            </PivotItem>
+        </Pivot>
+        <!--F1 C1-->
+        <Button Grid.Row="1" Grid.Column="1" 
+            Margin="0,0,0,0"
+            Content="Siguiente página" ToolTipService.ToolTip="Haz clic nene" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <!--F1 C2--><!--TextBox con intros-->
+        <TextBox Grid.Row="1" Grid.Column="2" 
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            MinHeight="100" MinWidth="150"
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            TextAlignment="Justify"
+            IsSpellCheckEnabled="true">
+        </TextBox>
+        <!--F1 C3--><!-- Password box -->
+        <PasswordBox Grid.Row="1" Grid.Column="3"
+            x:Name="passwordBox" Width="auto" 
+            Height="30" MaxLength="16"/>
+
+
+        <!--F2 C0--> <!--Listbox-->
+        <ListBox Grid.Row="2" Grid.Column="0">
+            <TextBlock Text="Arial" FontFamily="Arial"/>
+            <TextBlock Text="Courier New" FontFamily="Courier New"/>
+            <TextBlock Text="Times New Roman" FontFamily="Times New Roman"/>
+            <TextBlock Text="Arial" FontFamily="Arial"/>
+            <TextBlock Text="Courier New" FontFamily="Courier New"/>
+            <TextBlock Text="Times New Roman" FontFamily="Times New Roman"/>
+        </ListBox>
+        <!--F2 C1--> <!--combobox-->
+        <StackPanel  Grid.Row="2" Grid.Column="1"
+            x:Name="stack_panel1" Padding="10"
+            Orientation="Horizontal" Background="YellowGreen">
+            <ComboBox 
+                x:Name="ComboBox1"  Header="Select A Color" 
+                SelectionChanged="ComboBox1_SelectionChanged" 
+                 Margin="0,0,0,0" />
+            <TextBlock
+                x:Name="TextBlock1"
+                FontFamily="Consolas" FontSize="25"
+                Foreground="Navy"/>
+        </StackPanel>
+        <!--F2 C2--><!--Slider-->
+        <StackPanel Grid.Row="2" Grid.Column="2"
+                    Name="stackPanel1">
+            <Slider 
+            HorizontalAlignment="Center" VerticalAlignment="Center"
+            x:Name="volumeSlider" Header="Barrita" Width="auto" MinWidth="200"
+            ValueChanged="Slider_ValueChanged"/>
+            
+        </StackPanel>
+        
+        <!--F2 C3--><!--ProgressBar-->
+        <StackPanel Grid.Row="2" Grid.Column="3"
+                    Name="stackPanel2">
+            <ProgressBar Grid.Row="2" Grid.Column="3"
+            x:Name="progressBar1" Maximum="200" Margin="0,12"
+            MinHeight="10"/>
+            <ProgressBar Maximum="{Binding Finish, Mode=OneTime}" Minimum="{Binding Start, Mode=OneTime}" Value="{Binding CurrentTime,Mode=TwoWay}" />
+        </StackPanel>
+
+        <!--F3 C0--> <!-- CalendarView -->
+        <!--F3 C1--> <!-- CalendarDatePicker -->
+        <!--F3 C2--> <!-- DatePicker -->
+        <!--F3 C3--> <!-- DosBotones -->
+
+
+    </Grid>
+</Page>
