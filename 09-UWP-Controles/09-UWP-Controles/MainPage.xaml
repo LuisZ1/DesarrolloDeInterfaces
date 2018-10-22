@@ -123,7 +123,7 @@
                     Name="stackPanel1">
             <Slider 
             HorizontalAlignment="Center" VerticalAlignment="Center"
-            x:Name="volumeSlider" Header="Barrita" Width="auto" MinWidth="200"/>
+            x:Name="volumeSlider" Header="Barrita" Width="auto" MinWidth="200" StepFrequency="10"/>
             
         </StackPanel>
         
