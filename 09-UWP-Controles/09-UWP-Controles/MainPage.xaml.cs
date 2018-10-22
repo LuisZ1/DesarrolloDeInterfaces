@@ -43,16 +43,20 @@ namespace _09_UWP_Controles
             // Finally, Specify the ComboBox items source
             ComboBox1.ItemsSource = colors;
 
-            //Slider
+            /*//Slider
             Slider volumeSlider = new Slider();
             volumeSlider.Header = "Volume";
             volumeSlider.Width = 200;
             volumeSlider.ValueChanged += Slider_ValueChanged;
 
             // Add the slider to a parent container in the visual tree.
-            stackPanel1.Children.Add(volumeSlider);
+            stackPanel1.Children.Add(volumeSlider);*/
         }
-
+        /// <summary>
+        /// te pilla básicamente el texto y te lo escribe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             // Get the ComboBox instance
             ComboBox comboBox = sender as ComboBox;
@@ -62,11 +66,6 @@ namespace _09_UWP_Controles
             TextBlock1.Text += comboBox.SelectedValue.ToString();
         }
 
-        private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e) {
-            Slider slider = sender as Slider;
-            /*if (slider != null) {
-                media.Volume = slider.Value;
-            }*/
-        }
+
     }
 }

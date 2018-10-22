@@ -87,7 +87,8 @@
             TextWrapping="Wrap"
             AcceptsReturn="True"
             TextAlignment="Justify"
-            IsSpellCheckEnabled="true">
+            IsSpellCheckEnabled="true"
+            Width="">
         </TextBox>
         <!--F1 C3--><!-- Password box -->
         <PasswordBox Grid.Row="1" Grid.Column="3"
@@ -122,18 +123,16 @@
                     Name="stackPanel1">
             <Slider 
             HorizontalAlignment="Center" VerticalAlignment="Center"
-            x:Name="volumeSlider" Header="Barrita" Width="auto" MinWidth="200"
-            ValueChanged="Slider_ValueChanged"/>
+            x:Name="volumeSlider" Header="Barrita" Width="auto" MinWidth="200"/>
             
         </StackPanel>
         
         <!--F2 C3--><!--ProgressBar-->
         <StackPanel Grid.Row="2" Grid.Column="3"
-                    Name="stackPanel2">
+                    Name="stackPanel2" Padding="20">
             <ProgressBar Grid.Row="2" Grid.Column="3"
-            x:Name="progressBar1" Maximum="200" Margin="0,12"
-            MinHeight="10"/>
-            <ProgressBar Maximum="{Binding Finish, Mode=OneTime}" Minimum="{Binding Start, Mode=OneTime}" Value="{Binding CurrentTime,Mode=TwoWay}" />
+            x:Name="progressBar1" Maximum="100" Margin="0,12"
+            MinHeight="10" Value="{Binding ElementName=volumeSlider, Path=Value, Mode=OneWay}"/>
         </StackPanel>
 
         <!--F3 C0--> <!-- CalendarView -->
