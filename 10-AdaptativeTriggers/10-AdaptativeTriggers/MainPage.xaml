@@ -7,8 +7,78 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <RelativePanel>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="Group">
 
-    <Grid>
+                <!--Pantalla menor de 550 px-->
+                <VisualState x:Name="lessThan550">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="topBar.Background" Value="Cyan"/>
+                        <Setter Target="txtLabel.Text" Value="Móvil" />
+                        <Setter Target="txtLabel.FontSize" Value="30"/>
+                    </VisualState.Setters>
+                </VisualState>
+                
+                <!--Pantalla más grande de 550 px-->
+                <VisualState x:Name="greaterThan550">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="550"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="topBar.Background" Value="SkyBlue"/>
+                        <Setter Target="txtLabel.Text" Value="Tablet"/>
+                        <Setter Target="txtLabel.FontSize" Value="50"/>
+                    </VisualState.Setters>
+                </VisualState>
 
-    </Grid>
+                <!--Pantalla más grande de 800 px-->
+                <VisualState x:Name="greaterThan800">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="900"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="topBar.Background" Value="LightBlue"/>
+                        <Setter Target="txtLabel.Text" Value="Escritorio"/>
+                        <Setter Target="txtLabel.FontSize" Value="80"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <!--Stack panel superior con los botones-->
+        <StackPanel 
+            Name="topBar" 
+            Orientation="Horizontal" 
+            Background="LightSkyBlue" 
+            Height="auto" 
+            RelativePanel.AlignTopWithPanel="True" 
+            RelativePanel.AlignRightWithPanel="True" 
+            RelativePanel.AlignLeftWithPanel="True">
+                <AppBarButton Name="btnAdd" Icon="Add" Label="Añadir" Margin="10, 5, 5, 5"/>
+                <AppBarButton Name="btnGo" Icon="Go" Label="Ir" Margin="5"/>
+        </StackPanel>
+
+        <Grid RelativePanel.Below="topBar"
+              RelativePanel.AlignLeftWithPanel="True"
+              RelativePanel.AlignRightWithPanel="True"
+              RelativePanel.AlignBottomWithPanel="True">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        </Grid>
+
+        <TextBlock Name="txtLabel" Text="hola" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"></TextBlock>
+
+    </RelativePanel>
 </Page>
