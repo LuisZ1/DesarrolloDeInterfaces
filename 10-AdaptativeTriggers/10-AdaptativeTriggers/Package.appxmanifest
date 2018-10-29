@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="973070a5-d7e0-49a1-b671-afd08f6ec9c1"
-    Publisher="CN=lzumarraga"
+    Name="61725753-ea87-4d11-900a-9253f7de7d9b"
+    Publisher="CN=Luis Z"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="973070a5-d7e0-49a1-b671-afd08f6ec9c1" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="61725753-ea87-4d11-900a-9253f7de7d9b" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>08-FinalLayoutResponsive</DisplayName>
-    <PublisherDisplayName>lzumarraga</PublisherDisplayName>
+    <DisplayName>10-AdaptativeTriggers</DisplayName>
+    <PublisherDisplayName>Luis Z</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="_08_FinalLayoutResponsive.App">
+      EntryPoint="_10_AdaptativeTriggers.App">
       <uap:VisualElements
-        DisplayName="08-FinalLayoutResponsive"
+        DisplayName="10-AdaptativeTriggers"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="08-FinalLayoutResponsive"
+        Description="10-AdaptativeTriggers"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
