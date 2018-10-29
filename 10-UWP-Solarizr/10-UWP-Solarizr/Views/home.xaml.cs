@@ -30,79 +30,78 @@ namespace _10_UWP_Solarizr.Views
             MapControl1.MapServiceToken = "6mLJjsZcXXvJfJrFkd7d~hg9t2mShAf8JYxbMZAkUFA~AhD_b_cUSyP6KUYf9XcYvpbAFmEe4LtR7SUBGjAbYH1Eu48YXaTr3TYyBtfmxaTy ";
         }
 
-        #region Acciones de botones del splitview
+        //#region Acciones de botones del splitview
 
-        //boton expandir listview
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        ////boton expandir listview
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        //}
+
+        ////boton home
+        //private void btnHome_Click(object sender, RoutedEventArgs e)
+        //{
+        //    //this.Frame.Navigate(typeof(home));
+        //}
+
+        ////boton mensajes
+        //private void btnMensajes_Click(object sender, RoutedEventArgs e)
+        //{
+        //    this.Frame.Navigate(typeof(messages));
+        //}
+
+        ////boton avisos
+        //private void btnAvisos_Click(object sender, RoutedEventArgs e)
+        //{
+        //    this.Frame.Navigate(typeof(warnings));
+        //}
+
+        ////boton contactos
+        //private void btnContactos_Click(object sender, RoutedEventArgs e)
+        //{
+        //    this.Frame.Navigate(typeof(contact));
+        //}
+
+        //#endregion
+
+        //private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
+        //}
+
+        private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            //    if (HomeListBoxItem.IsSelected)
+            //    {
+            //        //ResultTextBlock.Text = "Home";
+            //        btnHome_Click(sender, e);
+            //    }
+            //    else
+            //    {
+            //        if (MensaggesListBoxItem.IsSelected)
+            //        {
+            //            //ResultTextBlock.Text = "Mensajes";
+            //            btnMensajes_Click(sender, e);
+            //        }
+            //        else
+            //        {
+            //            if (WarningListBoxItem.IsSelected)
+            //            {
+            //                //ResultTextBlock.Text = "Alertas";
+            //                btnAvisos_Click(sender, e);
+            //            }
+            //            else
+            //            {
+            //                if (ContactListBoxItem.IsSelected)
+            //                {
+            //                    //ResultTextBlock.Text = "Contacto";
+            //                    btnContactos_Click(sender, e);
+            //                }
+            //            }
+            //        }
+            //    }
         }
 
-        //boton home
-        private void btnHome_Click(object sender, RoutedEventArgs e)
-        {
-            //this.Frame.Navigate(typeof(home));
-        }
-
-        //boton mensajes
-        private void btnMensajes_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(messages));
-        }
-
-        //boton avisos
-        private void btnAvisos_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(warnings));
-        }
-
-        //boton contactos
-        private void btnContactos_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(contact));
-        }
-
-        #endregion
-
-        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
-        {
-            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
-        }
-
-        private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (HomeListBoxItem.IsSelected)
-            {
-                //ResultTextBlock.Text = "Home";
-                btnHome_Click(sender, e);
-            }
-            else
-            {
-                if (MensaggesListBoxItem.IsSelected)
-                {
-                    //ResultTextBlock.Text = "Mensajes";
-                    btnMensajes_Click(sender, e);
-                }
-                else
-                {
-                    if (WarningListBoxItem.IsSelected)
-                    {
-                        //ResultTextBlock.Text = "Alertas";
-                        btnAvisos_Click(sender, e);
-                    }
-                    else
-                    {
-                        if (ContactListBoxItem.IsSelected)
-                        {
-                            //ResultTextBlock.Text = "Contacto";
-                            btnContactos_Click(sender, e);
-                        }
-                    }
-                }
-            }
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+    protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             // Specify a known location.
             BasicGeoposition cityPosition = new BasicGeoposition() { Latitude = 37.3914105, Longitude = -5.9591776 };

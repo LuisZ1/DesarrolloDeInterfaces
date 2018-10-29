@@ -8,58 +8,60 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <RelativePanel>
+        <Grid RelativePanel.AlignRightWithPanel="True" 
+              RelativePanel.AlignLeftWithPanel="True"
+              RelativePanel.AlignBottomWithPanel="True"
+              RelativePanel.AlignTopWithPanel="True">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
-            <ColumnDefinition Width="6*"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
+                <ListView Margin="20">
+                    <ListViewItem>Jefe de Zona</ListViewItem>
+                    <ListViewItem>Fernando Galiana</ListViewItem>
+                    <ListViewItem>Josua</ListViewItem>
+                </ListView>
+            </StackPanel>
 
-        <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0">
-            <ListView Margin="20">
-                <ListViewItem>Jefe de Zona</ListViewItem>
-                <ListViewItem>Fernando Galiana</ListViewItem>
-                <ListViewItem>Josua</ListViewItem>
-            </ListView>
-        </StackPanel>
-        
-        <RelativePanel Grid.Row="0" Grid.Column="1" Margin=" 20 30 20 30" Padding="20" Background="#34b7f1" CornerRadius="20">
+            <RelativePanel Grid.Row="0" Grid.Column="2" Margin="20,30,20,30" Padding="20" Background="#34b7f1" CornerRadius="20" 
+                           HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
 
-            <Border Name="msg1" BorderThickness="2"
-                    RelativePanel.AlignRightWithPanel="True" Padding="10" Margin="3"
-                    CornerRadius="20" Background="#dcf8c6">
-                <TextBlock Text="Hola jefe, una clienta se me ha insinuado, ¿qué debo hacer?" Width="auto" Height="auto"/>
-            </Border>
-            <Border Name="msg2" BorderThickness="2" Width="auto" 
-                    Height="auto" RelativePanel.Below="msg1" Padding="10" Margin="3"
-                    CornerRadius="20" Background="#ece5dd">
-                <TextBlock Text="Sal de allí corriendo, es una trampa" Width="auto" Height="auto"/>
-            </Border>
-            <Border Name="msg3" BorderThickness="2" Width="auto" Height="auto" 
-                    RelativePanel.Below="msg2" RelativePanel.AlignRightWithPanel="True" Padding="10" Margin="3"
-                    CornerRadius="20" Background="#dcf8c6">
-                <TextBlock Text="Pero es tan simpática..." Width="auto" Height="auto"/>
-            </Border>
-            <Border Name="msg4" BorderThickness="2" Width="auto" Height="auto" 
-                    RelativePanel.Below="msg3" RelativePanel.AlignRightWithPanel="True" Padding="10" Margin="3"
-                    CornerRadius="20" Background="#dcf8c6">
-                <TextBlock Text="Creo que quiere casarse conmigo" Width="auto" Height="auto"/>
-            </Border>
-            <Border Name="msg5" BorderThickness="2" Width="auto" Height="auto" 
-                    RelativePanel.Below="msg4" RelativePanel.AlignRightWithPanel="True" Padding="10" Margin="3"
-                    CornerRadius="20" Background="#dcf8c6">
-                <TextBlock Text="Y estoy tan solo y desesperado..." Width="auto" Height="auto"/>
-            </Border>
+                <Border Name="msg1" BorderThickness="2"
+                        RelativePanel.AlignRightWithPanel="True" Padding="10" Margin="3"
+                        CornerRadius="20" Background="#dcf8c6">
+                    <TextBlock Text="Hola jefe, una clienta se me ha insinuado, ¿qué debo hacer?" Width="auto" Height="auto"/>
+                </Border>
+                <Border Name="msg2" BorderThickness="2" Width="auto" 
+                        Height="auto" RelativePanel.Below="msg1" Padding="10" Margin="3"
+                        CornerRadius="20" Background="#ece5dd">
+                    <TextBlock Text="Sal de allí corriendo, es una trampa" Width="auto" Height="auto"/>
+                </Border>
+                <Border Name="msg3" BorderThickness="2" Width="auto" Height="auto" 
+                        RelativePanel.Below="msg2" RelativePanel.AlignRightWithPanel="True" Padding="10" Margin="3"
+                        CornerRadius="20" Background="#dcf8c6">
+                    <TextBlock Text="Pero es tan simpática..." Width="auto" Height="auto"/>
+                </Border>
+                <Border Name="msg4" BorderThickness="2" Width="auto" Height="auto" 
+                        RelativePanel.Below="msg3" RelativePanel.AlignRightWithPanel="True" Padding="10" Margin="3"
+                        CornerRadius="20" Background="#dcf8c6">
+                    <TextBlock Text="Creo que quiere casarse conmigo" Width="auto" Height="auto"/>
+                </Border>
+                <Border Name="msg5" BorderThickness="2" Width="auto" Height="auto" 
+                        RelativePanel.Below="msg4" RelativePanel.AlignRightWithPanel="True" Padding="10" Margin="3"
+                        CornerRadius="20" Background="#dcf8c6">
+                    <TextBlock Text="Y estoy tan solo y desesperado..." Width="auto" Height="auto"/>
+                </Border>
 
-            <TextBox Name="text1" Text="Caja de texto" RelativePanel.AlignBottomWithPanel="True" RelativePanel.LeftOf="icon1" RelativePanel.AlignLeftWithPanel="True"/>
-            <FontIcon x:Name="icon1" Margin="5" FontFamily="Segoe MDL2 Assets" Glyph="&#xE72A;"  RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True"/>
+                <TextBox Name="text1" Text="Caja de texto" RelativePanel.AlignBottomWithPanel="True" RelativePanel.LeftOf="icon1" RelativePanel.AlignLeftWithPanel="True"/>
+                <FontIcon x:Name="icon1" Margin="5" FontFamily="Segoe MDL2 Assets" Glyph="&#xE72A;"  RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True"/>
 
-        </RelativePanel>
-
-
-    </Grid>
-
+            </RelativePanel>
+        </Grid>
+    </RelativePanel>
 </Page>

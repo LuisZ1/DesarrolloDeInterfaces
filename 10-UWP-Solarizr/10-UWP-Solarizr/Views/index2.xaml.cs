@@ -25,32 +25,28 @@ namespace _10_UWP_Solarizr.Views
         public index2()
         {
             this.InitializeComponent();
+            contenedor1.Navigate(typeof(home));
         }
         
         #region Acciones de botones del splitview
         
         //boton home
         private void btnHome_Click(object sender, RoutedEventArgs e) {
-            //contenedor1.Navigate(typeof(home));
-            //this.Frame.Navigate(typeof(home));
-            //contentControl1.Content = new Frame(typeof(home));
+            contenedor1.Navigate(typeof(home));
         }
 
         //boton mensajes
         private void btnMensajes_Click(object sender, RoutedEventArgs e) {
-            //this.Frame.Navigate(typeof(messages));
             contenedor1.Navigate(typeof(messages));
         }
 
         //boton avisos
         private void btnAvisos_Click(object sender, RoutedEventArgs e) {
-            //this.Frame.Navigate(typeof(warnings));
             contenedor1.Navigate(typeof(warnings));
         }
 
         //boton contactos
         private void btnContactos_Click(object sender, RoutedEventArgs e) {
-            //this.Frame.Navigate(typeof(contact));
             contenedor1.Navigate(typeof(contact));
         }
 
@@ -76,6 +72,10 @@ namespace _10_UWP_Solarizr.Views
                     }
                 }
             }
+        }
+
+        private void contenedor1_Navigated(object sender, NavigationEventArgs e) {
+
         }
     }
 }

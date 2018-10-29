@@ -19,16 +19,18 @@
 
         <SplitView Name="MiMenuHamburguesa" 
                    DisplayMode="CompactOverlay" 
-                   OpenPaneLength="300" 
-                   CompactPaneLength="50" 
-                   HorizontalAlignment="Left"
+                   OpenPaneLength="200" 
+                   CompactPaneLength="50"
                    RelativePanel.Below="HamburgerButton"
-                   RelativePanel.AlignBottomWithPanel="True">
+                   RelativePanel.AlignBottomWithPanel="True"
+                   HorizontalContentAlignment="Center"
+                   RelativePanel.AlignRightWithPanel="True"
+                   RelativePanel.AlignLeftWithPanel="True">
             <SplitView.Pane>
                 <ListBox SelectionMode="Single" 
                          Name="IconsListBox" 
                          SelectionChanged="IconsListBox_SelectionChanged">
-                    
+
                     <ListBoxItem Name="HomeListBoxItem">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="30" Text="&#xE80F;" />
@@ -56,12 +58,13 @@
                             <TextBlock Text="Contacto" FontSize="22" Margin="20,0,0,0" />
                         </StackPanel>
                     </ListBoxItem>
-                    
+
                 </ListBox>
             </SplitView.Pane>
-            
+
             <!--SplitView.Content-->
-            <Frame Name="contenedor1" Background="Aquamarine" HorizontalAlignment="Stretch"/>
+            <Frame Name="contenedor1" Background="Aquamarine" />
+
         </SplitView>
     </RelativePanel>
 </Page>
