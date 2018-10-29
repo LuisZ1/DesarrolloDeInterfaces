@@ -25,13 +25,7 @@
                 <ListViewItem>Josua</ListViewItem>
             </ListView>
         </StackPanel>
-        <!--
-        <Border Grid.Row="0" Grid.Column="1" BorderThickness="2"
-                    RelativePanel.AlignRightWithPanel="True" Padding="10" Margin="3"
-                    CornerRadius="20" Background="#dcf8c6">
-            <TextBlock Text="Hola jefe, una clienta se me ha insinuado, ¿qué debo hacer?"/>
-        </Border>-->
-
+        
         <RelativePanel Grid.Row="0" Grid.Column="1" Margin=" 20 30 20 30" Padding="20" Background="#34b7f1" CornerRadius="20">
 
             <Border Name="msg1" BorderThickness="2"
