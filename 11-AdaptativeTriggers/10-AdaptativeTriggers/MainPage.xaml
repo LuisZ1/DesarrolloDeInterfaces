@@ -1,0 +1,222 @@
+﻿<Page
+    x:Class="_10_AdaptativeTriggers.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_10_AdaptativeTriggers"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <RelativePanel>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="Group">
+
+                <!--Pantalla menor de 550 px-->
+                <VisualState x:Name="lessThan550">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="topBar.Background" Value="Cyan"/>
+                        <Setter Target="txtLabel.Text" Value="Móvil" />
+                        <Setter Target="txtLabel.FontSize" Value="30"/>
+                        <Setter Target="topBar.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+                        <Setter Target="topBar.(RelativePanel.AlignBottomWithPanel)" Value="False"/>
+                        <Setter Target="myScroll.(RelativePanel.Below)" Value="topBar"/>
+                        <Setter Target="myScroll.(RelativePanel.AlignTopWithPanel)" Value="False"/>
+                        <Setter Target="myScroll.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+                        <Setter Target="myScroll.(RelativePanel.AlignBottomWithPanel)" Value="True"/>
+                        <Setter Target="myScroll.(RelativePanel.AlignLeftWithPanel)" Value="True"/>
+                        <Setter Target="topBar.Orientation" Value="Horizontal"/>
+                        
+
+                        <Setter Target="pic1.(Grid.Row)" Value="0"/>
+                        <Setter Target="pic1.(Grid.Column)" Value="0"/>
+                        <Setter Target="pic1.(Grid.ColumnSpan)" Value="3"/>
+
+                        <Setter Target="pic2.(Grid.Row)" Value="1"/>
+                        <Setter Target="pic2.(Grid.Column)" Value="0"/>
+                        <Setter Target="pic2.(Grid.ColumnSpan)" Value="3"/>
+
+                        <Setter Target="pic3.(Grid.Row)" Value="2"/>
+                        <Setter Target="pic3.(Grid.Column)" Value="0"/>
+                        <Setter Target="pic3.(Grid.ColumnSpan)" Value="3"/>
+                        
+                        <Setter Target="pic4.(Grid.Row)" Value="3"/>
+                        <Setter Target="pic4.(Grid.Column)" Value="0"/>
+                        <Setter Target="pic4.(Grid.ColumnSpan)" Value="3"/>
+
+                        <Setter Target="pic5.(Grid.Row)" Value="4"/>
+                        <Setter Target="pic5.(Grid.Column)" Value="0"/>
+                        <Setter Target="pic5.(Grid.ColumnSpan)" Value="3"/>
+
+                        <Setter Target="pic6.(Grid.Row)" Value="5"/>
+                        <Setter Target="pic6.(Grid.Column)" Value="0"/>
+                        <Setter Target="pic6.(Grid.ColumnSpan)" Value="3"/>
+
+                        <Setter Target="pic7.(Grid.Row)" Value="6"/>
+                        <Setter Target="pic7.(Grid.Column)" Value="0"/>
+                        <Setter Target="pic7.(Grid.ColumnSpan)" Value="3"/>
+
+                        <Setter Target="pic8.(Grid.Row)" Value="7"/>
+                        <Setter Target="pic8.(Grid.Column)" Value="0"/>
+                        <Setter Target="pic8.(Grid.ColumnSpan)" Value="3"/>
+
+                        <Setter Target="pic9.(Grid.Row)" Value="8"/>
+                        <Setter Target="pic9.(Grid.Column)" Value="0"/>
+                        <Setter Target="pic9.(Grid.ColumnSpan)" Value="3"/>
+
+                    </VisualState.Setters>
+                </VisualState>
+                
+                <!--Pantalla más grande de 550 px-->
+                <VisualState x:Name="greaterThan550">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="550"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="topBar.Background" Value="SkyBlue"/>
+                        <Setter Target="txtLabel.Text" Value="Tablet"/>
+                        <Setter Target="txtLabel.FontSize" Value="50"/>
+                        <Setter Target="topBar.(RelativePanel.AlignRightWithPanel)" Value="False"/>
+                        <Setter Target="topBar.(RelativePanel.AlignBottomWithPanel)" Value="True"/>
+                        <Setter Target="myScroll.(RelativePanel.RightOf)" Value="topBar"/>
+                        <Setter Target="myScroll.(RelativePanel.AlignTopWithPanel)" Value="False"/>
+                        <Setter Target="myScroll.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+                        <Setter Target="myScroll.(RelativePanel.AlignBottomWithPanel)" Value="True"/>
+                        <Setter Target="myScroll.(RelativePanel.AlignLeftWithPanel)" Value="False"/>
+                        <Setter Target="topBar.Orientation" Value="Vertical"/>
+
+                        <Setter Target="pic1.(Grid.Row)" Value="0"/>
+                        <Setter Target="pic1.(Grid.Column)" Value="0"/>
+
+                        <Setter Target="pic2.(Grid.Row)" Value="0"/>
+                        <Setter Target="pic2.(Grid.Column)" Value="1"/>
+
+                        <Setter Target="pic3.(Grid.Row)" Value="1"/>
+                        <Setter Target="pic3.(Grid.Column)" Value="0"/>
+
+                        <Setter Target="pic4.(Grid.Row)" Value="1"/>
+                        <Setter Target="pic4.(Grid.Column)" Value="1"/>
+
+                        <Setter Target="pic5.(Grid.Row)" Value="2"/>
+                        <Setter Target="pic5.(Grid.Column)" Value="0"/>
+
+                        <Setter Target="pic6.(Grid.Row)" Value="2"/>
+                        <Setter Target="pic6.(Grid.Column)" Value="1"/>
+
+                        <Setter Target="pic7.(Grid.Row)" Value="3"/>
+                        <Setter Target="pic7.(Grid.Column)" Value="0"/>
+
+                        <Setter Target="pic8.(Grid.Row)" Value="3"/>
+                        <Setter Target="pic8.(Grid.Column)" Value="1"/>
+
+                        <Setter Target="pic9.(Grid.Row)" Value="4"/>
+                        <Setter Target="pic9.(Grid.Column)" Value="0"/>
+
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!--Pantalla más grande de 800 px-->
+                <VisualState x:Name="greaterThan800">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="900"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="topBar.Background" Value="LightBlue"/>
+                        <Setter Target="txtLabel.Text" Value="Escritorio"/>
+                        <Setter Target="txtLabel.FontSize" Value="80"/>
+                        <Setter Target="topBar.(RelativePanel.AlignRightWithPanel)" Value="False"/>
+                        <Setter Target="topBar.(RelativePanel.AlignBottomWithPanel)" Value="True"/>
+                        <Setter Target="myScroll.(RelativePanel.RightOf)" Value="topBar"/>
+                        <Setter Target="myScroll.(RelativePanel.AlignTopWithPanel)" Value="False"/>
+                        <Setter Target="myScroll.(RelativePanel.AlignRightWithPanel)" Value="True"/>
+                        <Setter Target="myScroll.(RelativePanel.AlignBottomWithPanel)" Value="True"/>
+                        <Setter Target="myScroll.(RelativePanel.AlignLeftWithPanel)" Value="False"/>
+                        <Setter Target="topBar.Orientation" Value="Vertical"/>
+
+                        <Setter Target="pic1.(Grid.Row)" Value="0"/>
+                        <Setter Target="pic1.(Grid.Column)" Value="0"/>
+
+                        <Setter Target="pic2.(Grid.Row)" Value="0"/>
+                        <Setter Target="pic2.(Grid.Column)" Value="1"/>
+
+                        <Setter Target="pic3.(Grid.Row)" Value="0"/>
+                        <Setter Target="pic3.(Grid.Column)" Value="2"/>
+
+                        <Setter Target="pic4.(Grid.Row)" Value="1"/>
+                        <Setter Target="pic4.(Grid.Column)" Value="0"/>
+
+                        <Setter Target="pic5.(Grid.Row)" Value="1"/>
+                        <Setter Target="pic5.(Grid.Column)" Value="1"/>
+
+                        <Setter Target="pic6.(Grid.Row)" Value="1"/>
+                        <Setter Target="pic6.(Grid.Column)" Value="2"/>
+
+                        <Setter Target="pic7.(Grid.Row)" Value="2"/>
+                        <Setter Target="pic7.(Grid.Column)" Value="0"/>
+
+                        <Setter Target="pic8.(Grid.Row)" Value="2"/>
+                        <Setter Target="pic8.(Grid.Column)" Value="1"/>
+
+                        <Setter Target="pic9.(Grid.Row)" Value="2"/>
+                        <Setter Target="pic9.(Grid.Column)" Value="2"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <!--Stack panel superior con los botones-->
+        <StackPanel 
+            Name="topBar" 
+            Orientation="Vertical" 
+            Background="LightSkyBlue" 
+            Height="auto" 
+            RelativePanel.AlignTopWithPanel="True" 
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignBottomWithPanel="True">
+                <AppBarButton Name="btnAdd" Icon="Add" Label="Añadir" Margin="10, 5, 5, 5"/>
+                <AppBarButton Name="btnGo" Icon="Go" Label="Ir" Margin="5"/>
+        </StackPanel>
+
+        <ScrollViewer 
+            Name="myScroll"
+            RelativePanel.RightOf="topBar"
+            RelativePanel.AlignRightWithPanel="True"
+            RelativePanel.AlignBottomWithPanel="True">
+        <Grid Name="myGrid"
+              >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="col0" Width="*"></ColumnDefinition>
+                <ColumnDefinition x:Name="col1" Width="*"></ColumnDefinition>
+                <ColumnDefinition x:Name="col2" Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Source="../Assets/myPicture.jpg" Name="pic1" Grid.Row="0" Grid.Column="0"></Image>
+            <Image Source="../Assets/myPicture.jpg" Name="pic2" Grid.Row="0" Grid.Column="1"></Image>
+            <Image Source="../Assets/myPicture.jpg" Name="pic3" Grid.Row="0" Grid.Column="2"></Image>
+            <Image Source="../Assets/myPicture.jpg" Name="pic4" Grid.Row="1" Grid.Column="0"></Image>
+            <Image Source="../Assets/myPicture.jpg" Name="pic5" Grid.Row="1" Grid.Column="1"></Image>
+            <Image Source="../Assets/myPicture.jpg" Name="pic6" Grid.Row="1" Grid.Column="2"></Image>
+            <Image Source="../Assets/myPicture.jpg" Name="pic7" Grid.Row="2" Grid.Column="0"></Image>
+            <Image Source="../Assets/myPicture.jpg" Name="pic8" Grid.Row="2" Grid.Column="1"></Image>
+            <Image Source="../Assets/myPicture.jpg" Name="pic9" Grid.Row="2" Grid.Column="2"></Image>
+        </Grid>
+
+        </ScrollViewer>
+            
+        <TextBlock Name="txtLabel" Text="hola" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True"></TextBlock>
+        
+        
+    </RelativePanel>
+</Page>
