@@ -27,5 +27,13 @@ namespace _14_CRUDPersonas_UWP
             this.InitializeComponent();
         }
 
+        public void btnGuardar_Click(){
+            txtNombre.Focus(FocusState.Unfocused);
+            txtApellidos.Focus(FocusState.Unfocused);
+            txtDireccion.Focus(FocusState.Unfocused);
+            txtfechaNacimiento..Focus(FocusState.Unfocused);
+            txtTelefono.Focus(FocusState.Unfocused);
+        }
+
     }
 }

@@ -22,6 +22,7 @@
             ItemsSource="{Binding ListadoDePersonas}" 
             SelectedItem="{Binding PersonaSeleccionada, Mode=TwoWay}" 
             RelativePanel.Above="botonera"
+            RelativePanel.AlignTopWithPanel="True"
             Margin="5,5,20,5">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -55,7 +56,7 @@
             Background="LightSeaGreen">
 
             <AppBarButton Icon="Add" Label="Añadir" Foreground="White"/>
-            <AppBarButton Icon="Save" Label="Guardar" Foreground="White" Command="{Binding Path=modificarPersonaCommand}"/>
+            <AppBarButton Icon="Save" Label="Guardar" Foreground="White" Command="{Binding Path=modificarPersonaCommand}" Name="btnGuardar"/>
             <AppBarButton Icon="Delete" Label="Eliminar" Foreground="White" Command="{Binding Path=eliminarCommand}"/>
             <AppBarButton Icon="Refresh" Label="Actualizar" Foreground="White" Command="{Binding Path=actualizarListaCommand}"/>
         </StackPanel>
