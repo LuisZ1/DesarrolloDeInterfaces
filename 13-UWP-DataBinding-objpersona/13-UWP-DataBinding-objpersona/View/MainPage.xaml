@@ -32,9 +32,11 @@
             Margin="10,10,50,10" 
             RelativePanel.AlignRightWithPanel="True" 
             Padding="10">
-                <TextBox Text="{Binding PersonaSeleccionada.nombre, Mode=TwoWay}" PlaceholderText="Nombre"/>
-                <TextBox Text="{Binding PersonaSeleccionada.apellidos, Mode=TwoWay}" PlaceholderText="Apellidos"/>
-                <TextBox Text="{Binding PersonaSeleccionada.direccion, Mode=TwoWay}" PlaceholderText="Direccion"/>
+            <TextBox Text="{Binding PersonaSeleccionada.nombre, Mode=TwoWay}" PlaceholderText="Nombre"/>
+            <TextBox Text="{Binding PersonaSeleccionada.apellidos, Mode=TwoWay}" PlaceholderText="Apellidos"/>
+            <TextBox Text="{Binding PersonaSeleccionada.fechaNacimiento, Mode=TwoWay}" PlaceholderText="Fecha de Nacimiento"/>
+            <TextBox Text="{Binding PersonaSeleccionada.telefono, Mode=TwoWay}" PlaceholderText="Teléfono"/>
+            <TextBox Text="{Binding PersonaSeleccionada.direccion, Mode=TwoWay}" PlaceholderText="Dirección"/>
         </StackPanel>
     </RelativePanel>
 </Page>
