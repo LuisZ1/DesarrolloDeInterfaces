@@ -15,7 +15,14 @@
 
     <RelativePanel>
         <!-- Ponemos TwoWay para que la propiedad del ViewModel personaSeleccionada vaya cambiando -->
-        <ListView Name="listilla"  ItemsSource="{Binding ListadoDePersonas}" SelectedItem="{Binding PersonaSeleccionada, Mode = TwoWay}">
+        <!--SelectionChanged="listaPersonas_SelectionChanged"-->
+        <ListView 
+            Name="listilla"  
+             
+            ItemsSource="{Binding ListadoDePersonas}" 
+            SelectedItem="{Binding PersonaSeleccionada, Mode=TwoWay}" 
+            RelativePanel.Above="botonera"
+            Margin="5,5,20,5">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical">
@@ -32,23 +39,25 @@
             Margin="10,10,50,10" 
             RelativePanel.AlignRightWithPanel="True" 
             Padding="10">
-            <TextBox Text="{Binding PersonaSeleccionada.nombre, Mode=TwoWay}" PlaceholderText="Nombre"/>
-            <TextBox Text="{Binding PersonaSeleccionada.apellidos, Mode=TwoWay}" PlaceholderText="Apellidos"/>
-            <TextBox Text="{Binding PersonaSeleccionada.fechaNacimiento, Mode=TwoWay}" PlaceholderText="Fecha de Nacimiento"/>
-            <TextBox Text="{Binding PersonaSeleccionada.telefono, Mode=TwoWay}" PlaceholderText="Teléfono"/>
-            <TextBox Text="{Binding PersonaSeleccionada.direccion, Mode=TwoWay}" PlaceholderText="Dirección"/>
+            <TextBox Name="txtNombre" Text="{Binding PersonaSeleccionada.nombre, Mode=TwoWay}" PlaceholderText="Nombre"/>
+            <TextBox Name="txtApellidos" Text="{Binding PersonaSeleccionada.apellidos, Mode=TwoWay}" PlaceholderText="Apellidos"/>
+            <TextBox Name="txtfechaNacimiento" Text="{Binding PersonaSeleccionada.fechaNacimiento, Mode=TwoWay}" PlaceholderText="Fecha de Nacimiento"/>
+            <TextBox Name="txtTelefono" Text="{Binding PersonaSeleccionada.telefono, Mode=TwoWay}" PlaceholderText="Teléfono"/>
+            <TextBox Name="txtDireccion" Text="{Binding PersonaSeleccionada.direccion, Mode=TwoWay}" PlaceholderText="Dirección"/>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" 
-                    RelativePanel.AlignBottomWithPanel="True"
-                    RelativePanel.AlignLeftWithPanel="True"
-                    RelativePanel.AlignRightWithPanel="True"
-                    Background="LightSeaGreen">
+        <StackPanel 
+            Name="botonera"
+            Orientation="Horizontal" 
+            RelativePanel.AlignBottomWithPanel="True"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True"
+            Background="LightSeaGreen">
 
             <AppBarButton Icon="Add" Label="Añadir" Foreground="White"/>
-            <AppBarButton Icon="Save" Label="Guardar" Foreground="White"/>
-            <AppBarButton Icon="Delete" Label="Eliminar" Foreground="White"/>
-            <AppBarButton Icon="Refresh" Label="Actualizar" Foreground="White"/>
+            <AppBarButton Icon="Save" Label="Guardar" Foreground="White" Command="{Binding Path=modificarPersonaCommand}"/>
+            <AppBarButton Icon="Delete" Label="Eliminar" Foreground="White" Command="{Binding Path=eliminarCommand}"/>
+            <AppBarButton Icon="Refresh" Label="Actualizar" Foreground="White" Command="{Binding Path=actualizarListaCommand}"/>
         </StackPanel>
         
     </RelativePanel>

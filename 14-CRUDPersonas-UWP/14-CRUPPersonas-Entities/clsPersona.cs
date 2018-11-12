@@ -18,13 +18,15 @@ namespace _14_CRUPPersonas_Entities {
 
         public String telefono { get; set; }
 
+        public int idDepartamento { get; set; }
+
 
         #endregion
 
 
         #region constructores
 
-        public clsPersona(int idPersona, String nombre, String apellidos, DateTime fechaNacimiento, String direccion, String telefono) {
+        public clsPersona(int idPersona, String nombre, String apellidos, DateTime fechaNacimiento, String direccion, String telefono, int idDepartamento) {
 
             this.idPersona = idPersona;
             this.nombre = nombre;
@@ -32,6 +34,7 @@ namespace _14_CRUPPersonas_Entities {
             this.fechaNacimiento = fechaNacimiento;
             this.direccion = direccion;
             this.telefono = telefono;
+            this.idDepartamento = idDepartamento;
 
         }
 
