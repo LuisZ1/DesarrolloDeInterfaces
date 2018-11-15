@@ -39,12 +39,18 @@
             RelativePanel.RightOf="listilla" 
             Margin="10,10,50,10" 
             RelativePanel.AlignRightWithPanel="True" 
-            Padding="10">
-            <TextBox Name="txtNombre" Text="{Binding PersonaSeleccionada.nombre, Mode=TwoWay}" PlaceholderText="Nombre"/>
-            <TextBox Name="txtApellidos" Text="{Binding PersonaSeleccionada.apellidos, Mode=TwoWay}" PlaceholderText="Apellidos"/>
-            <TextBox Name="txtfechaNacimiento" Text="{Binding PersonaSeleccionada.fechaNacimiento, Mode=TwoWay}" PlaceholderText="Fecha de Nacimiento"/>
-            <TextBox Name="txtTelefono" Text="{Binding PersonaSeleccionada.telefono, Mode=TwoWay}" PlaceholderText="Teléfono"/>
-            <TextBox Name="txtDireccion" Text="{Binding PersonaSeleccionada.direccion, Mode=TwoWay}" PlaceholderText="Dirección"/>
+            Padding="10"
+            Visibility="{Binding esVisibleFormulario}">
+            <TextBlock Text="Nombre:"/>
+            <TextBox Name="txtNombre" Text="{Binding PersonaSeleccionada.nombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Nombre" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
+            <TextBlock Text="Apellidos:"/>
+            <TextBox Name="txtApellidos" Text="{Binding PersonaSeleccionada.apellidos, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Apellidos" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
+            <TextBlock Text="Fecha de nacimiento:"/>
+            <TextBox Name="txtfechaNacimiento" Text="{Binding PersonaSeleccionada.fechaNacimiento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Fecha de Nacimiento" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
+            <TextBlock Text="Teléfono:"/>
+            <TextBox Name="txtTelefono" Text="{Binding PersonaSeleccionada.telefono, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Teléfono" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
+            <TextBlock Text="Dirección:"/>
+            <TextBox Name="txtDireccion" Text="{Binding PersonaSeleccionada.direccion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Dirección" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
         </StackPanel>
 
         <StackPanel 
@@ -55,10 +61,10 @@
             RelativePanel.AlignRightWithPanel="True"
             Background="LightSeaGreen">
 
-            <AppBarButton Icon="Add" Label="Añadir" Foreground="White"/>
+            <AppBarButton Icon="Refresh" Label="Actualizar" Foreground="White" Command="{Binding Path=actualizarListaCommand}"/>
+            <AppBarButton Icon="Add" Label="Nuevo" Foreground="White" Command="{Binding Path=insertarPersonaCommand}" Name="btnNuevo" Click="btnNuevo_Click"/>
             <AppBarButton Icon="Save" Label="Guardar" Foreground="White" Command="{Binding Path=modificarPersonaCommand}" Name="btnGuardar"/>
             <AppBarButton Icon="Delete" Label="Eliminar" Foreground="White" Command="{Binding Path=eliminarCommand}"/>
-            <AppBarButton Icon="Refresh" Label="Actualizar" Foreground="White" Command="{Binding Path=actualizarListaCommand}"/>
         </StackPanel>
         
     </RelativePanel>

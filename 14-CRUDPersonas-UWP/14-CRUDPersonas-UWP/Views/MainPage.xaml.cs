@@ -27,12 +27,22 @@ namespace _14_CRUDPersonas_UWP
             this.InitializeComponent();
         }
 
-        public void btnGuardar_Click(){
-            txtNombre.Focus(FocusState.Unfocused);
-            txtApellidos.Focus(FocusState.Unfocused);
-            txtDireccion.Focus(FocusState.Unfocused);
-            txtfechaNacimiento..Focus(FocusState.Unfocused);
-            txtTelefono.Focus(FocusState.Unfocused);
+        /// <summary>
+        /// Quita el foco de los cuadros de texto antes de guardar
+        /// 
+        /// No se necesita si se utiliza, en el xaml, 
+        /// la propiedad "UpdateSourceTrigger=PropertyChanged" en el binding
+        /// </summary>
+        //public void btnGuardar_Click() {
+        //    txtNombre.Focus(FocusState.Unfocused);
+        //    txtApellidos.Focus(FocusState.Unfocused);
+        //    txtDireccion.Focus(FocusState.Unfocused);
+        //    txtfechaNacimiento.Focus(FocusState.Unfocused);
+        //    txtTelefono.Focus(FocusState.Unfocused);
+        //}
+        public void btnNuevo_Click(object sender, RoutedEventArgs e) {
+            //txtNombre.Focus(FocusState.Unfocused);
+            listilla.Focus(FocusState.Unfocused);
         }
 
     }

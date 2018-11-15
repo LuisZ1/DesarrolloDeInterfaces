@@ -46,7 +46,7 @@ namespace _14_CRUPPersonas_Entities {
             this.fechaNacimiento = new DateTime();
             this.direccion = "";
             this.telefono = "";
-
+            this.idDepartamento = 1;
         }
 
         #endregion
