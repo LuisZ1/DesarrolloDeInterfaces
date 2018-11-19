@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 
 namespace _14_CRUDPersonas_UWP.ViewModels {
     public class MainPageViewModel : clsVMBase {
@@ -14,8 +15,11 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
         #region propiedades privadas
 
         private List<clsPersona> _ListadoDePersonas;
+        private List<clsPersona> _ListadoDePersonasCompleto;
         private clsPersona _PersonaSeleccionada;
         private clsDepartamento _DepartamentoSeleccionado;
+        private String _textoBuscado;
+        private String _resultadoBusqueda;
 
         private List<clsDepartamento> _ListadoDepartamentos;
         private clsListadoPersonas_BL _listadoPersonas_BL = new clsListadoPersonas_BL();
@@ -63,6 +67,27 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
             set { _DepartamentoSeleccionado = value; NotifyPropertyChanged("DepartamentoSeleccionado"); }
         }
 
+        public String textoBuscado {
+            get {
+                return _textoBuscado;
+            }
+            set {
+                _textoBuscado = value;
+                resultadoBusqueda = FiltrarListado(_textoBuscado) + "resultados";
+                NotifyPropertyChanged("ListadoDePersonas");
+                NotifyPropertyChanged("resultadoBusqueda");
+            }
+        }
+
+        public String resultadoBusqueda {
+            get {
+                return _resultadoBusqueda;
+            }
+            set {
+
+            }
+        }
+
         #endregion
 
         #region constructores
@@ -71,6 +96,7 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
             //Cargar listado de personas
             //_ListadoDePersonas = clsListadoPersonas.listadoPersonas();
             _ListadoDePersonas = _listadoPersonas_BL.listadoCompletoPersonas_BL();
+            _ListadoDePersonasCompleto = _listadoPersonas_BL.listadoCompletoPersonas_BL();
             esVisibleFormulario = "Collapsed";
         }
         #endregion
@@ -92,17 +118,31 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
             }
         }
 
-        private void eliminarCommand_Executed() {
+        private async void eliminarCommand_Executed() {
 
             try {
                 //Instanciar un objeto de la clase manejadora de personas de la BL
                 mngPersonasBL manejadoraPersonas = new mngPersonasBL();
                 manejadoraPersonas.dropPersonoID_BL(PersonaSeleccionada.idPersona);
 
-                _ListadoDePersonas = _listadoPersonas_BL.listadoCompletoPersonas_BL();
-                NotifyPropertyChanged("ListadoDePersonas");
+                ContentDialog confirmarBorrado = new ContentDialog();
+
+                confirmarBorrado.Title = "Eliminar";
+                confirmarBorrado.Content = "Estas seguro de borrar?";
+                confirmarBorrado.PrimaryButtonText = "Cancelar";
+                confirmarBorrado.SecondaryButtonText = "Aceptar";
+
+                ContentDialogResult resultado = await confirmarBorrado.ShowAsync();
+
+                if (resultado == ContentDialogResult.Secondary) {
+                    _ListadoDePersonas = _listadoPersonas_BL.listadoCompletoPersonas_BL();
+                    NotifyPropertyChanged("ListadoDePersonas");
+                }
+
             } catch (Exception) {
                 //Lanzar mensaje, messagedialog con error
+            } finally {
+                alternarVisibilidadFormulario();
             }
         }
 
@@ -133,6 +173,8 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
                 NotifyPropertyChanged("ListadoDePersonas");
             } catch (Exception) {
                 //Lanzar mensaje, messagedialog con error
+            } finally {
+                OcultarFormulario();
             }
         }
         #endregion
@@ -145,28 +187,58 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
             }
         }
 
-        public void modificarPersonaCommand_Executed() {
+        public async void modificarPersonaCommand_Executed() {
             mngPersonasBL manejadoraPersonas = new mngPersonasBL();
-            if (!_esUnaInsercion) {
-                try {
+
+            try {
+                if (!_esUnaInsercion) {
                     manejadoraPersonas.alterPersona_BL(PersonaSeleccionada);
-
-                    _ListadoDePersonas = _listadoPersonas_BL.listadoCompletoPersonas_BL();
-                    NotifyPropertyChanged("ListadoDePersonas");
-                } catch (Exception) {
-                    //Lanzar mensaje, messagedialog con error 
-                }
-            } else {
-                try {
+                } else {
                     manejadoraPersonas.insertPersona_BL(PersonaSeleccionada);
-
-                    _ListadoDePersonas = _listadoPersonas_BL.listadoCompletoPersonas_BL();
-                    NotifyPropertyChanged("ListadoDePersonas");
                     _esUnaInsercion = false;
-                } catch (Exception e) {
-                    //Lanzar mensaje, messagedialog con error 
                 }
+
+                ContentDialog confirmar = new ContentDialog();
+
+                confirmar.Title = "Confirmación";
+                confirmar.Content = "Cambios guardados con éxito";
+                confirmar.PrimaryButtonText = "Aceptar";
+
+                ContentDialogResult resultado = await confirmar.ShowAsync();
+
+                _ListadoDePersonas = _listadoPersonas_BL.listadoCompletoPersonas_BL();
+                NotifyPropertyChanged("ListadoDePersonas");
+            } catch (Exception) {
+
+            } finally {
+                /*
+                 * Tenemos dos opciones:
+                 *      - Ocultar el formulario
+                 *      - Mostrar el formulario y que la persona seleccionada sea la insertada
+                 */
+                OcultarFormulario();
             }
+
+            //if (!_esUnaInsercion) {
+            //    try {
+            //        manejadoraPersonas.alterPersona_BL(PersonaSeleccionada);
+
+            //        _ListadoDePersonas = _listadoPersonas_BL.listadoCompletoPersonas_BL();
+            //        NotifyPropertyChanged("ListadoDePersonas");
+            //    } catch (Exception) {
+            //        //Lanzar mensaje, messagedialog con error 
+            //    }
+            //} else {
+            //    try {
+            //        manejadoraPersonas.insertPersona_BL(PersonaSeleccionada);
+
+            //        _ListadoDePersonas = _listadoPersonas_BL.listadoCompletoPersonas_BL();
+            //        NotifyPropertyChanged("ListadoDePersonas");
+            //        _esUnaInsercion = false;
+            //    } catch (Exception e) {
+            //        //Lanzar mensaje, messagedialog con error 
+            //    }
+            //}
         }
 
         public bool modificarPersonaCommand_CanExecuted() {
@@ -196,8 +268,46 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
                 _esUnaInsercion = true;
             } catch (Exception) {
                 //Lanzar mensaje, messagedialog con error 
+            } finally {
+                MostrarFormulario();
             }
         }
+        #endregion
+
+        #region buscar
+        
+        private int FiltrarListado(String texto) {
+            
+            _ListadoDePersonas = new List<clsPersona>();
+            _ListadoDePersonas = _ListadoDePersonasCompleto.Where(persona => persona.nombre.ToLower().Contains(texto.ToLower()) || persona.apellidos.ToLower().Contains(texto.ToLower())).ToList();
+
+            return 0;
+        }
+
+        #endregion
+
+        #region otros
+
+        public void alternarVisibilidadFormulario() {
+
+            if (esVisibleFormulario.Equals("Visible")) {
+                esVisibleFormulario = "Collapsed";
+            } else {
+                esVisibleFormulario = "Visible";
+            }
+            NotifyPropertyChanged("esVisibleFormulario");
+        }
+
+        public void MostrarFormulario() {
+            esVisibleFormulario = "Visible";
+            NotifyPropertyChanged("esVisibleFormulario");
+        }
+
+        public void OcultarFormulario() {
+            esVisibleFormulario = "Collapsed";
+            NotifyPropertyChanged("esVisibleFormulario");
+        }
+
         #endregion
 
         #endregion

@@ -16,12 +16,14 @@
     <RelativePanel>
         <!-- Ponemos TwoWay para que la propiedad del ViewModel personaSeleccionada vaya cambiando -->
         <!--SelectionChanged="listaPersonas_SelectionChanged"-->
+        <TextBlock Text="{Binding resultado}" Name="resultadoBusqueda"/>
         <ListView 
             Name="listilla"  
-             
+            RightTapped="listilla_RightTapped"
             ItemsSource="{Binding ListadoDePersonas}" 
             SelectedItem="{Binding PersonaSeleccionada, Mode=TwoWay}" 
             RelativePanel.Above="botonera"
+            RelativePanel.Below="resultadoBusqueda"
             RelativePanel.AlignTopWithPanel="True"
             Margin="5,5,20,5">
             <ListView.ItemTemplate>
@@ -32,6 +34,13 @@
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
+
+            <ListView.Resources>
+                <MenuFlyout x:Name="miMenuFlyoutListado">
+                    <MenuFlyoutItem Command="{Binding Path=modificarPersonaCommand}" Icon="Edit" Text="Guardar cambios"/>
+                    <MenuFlyoutItem Command="{Binding Path=eliminarCommand}" Icon="Delete" Text="Eliminar"/>
+                </MenuFlyout>
+            </ListView.Resources>
         </ListView>
 
         <StackPanel 
@@ -65,6 +74,15 @@
             <AppBarButton Icon="Add" Label="Nuevo" Foreground="White" Command="{Binding Path=insertarPersonaCommand}" Name="btnNuevo" Click="btnNuevo_Click"/>
             <AppBarButton Icon="Save" Label="Guardar" Foreground="White" Command="{Binding Path=modificarPersonaCommand}" Name="btnGuardar"/>
             <AppBarButton Icon="Delete" Label="Eliminar" Foreground="White" Command="{Binding Path=eliminarCommand}"/>
+
+        </StackPanel>
+
+        <StackPanel RelativePanel.AlignTopWith="botonera" RelativePanel.AlignRightWithPanel="True" 
+                    RelativePanel.AlignBottomWithPanel="True" VerticalAlignment="Center">
+            <Border BorderThickness="1" CornerRadius="10" Margin="0,0,20,0" VerticalAlignment="Center">
+                <TextBox Name="barraBusqueda" Width="200px" MaxWidth="300" 
+                         PlaceholderText="Buscar" HorizontalContentAlignment="Center" BorderThickness="0" Text="{Binding Path=textoBuscado, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            </Border>
         </StackPanel>
         
     </RelativePanel>

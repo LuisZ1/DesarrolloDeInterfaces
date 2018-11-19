@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _14_CRUPPersonas_Entities;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -45,5 +46,12 @@ namespace _14_CRUDPersonas_UWP
             listilla.Focus(FocusState.Unfocused);
         }
 
+        private void listilla_RightTapped(object sender, RightTappedRoutedEventArgs e) {
+            ListView listView = (ListView)sender;
+
+            miMenuFlyoutListado.ShowAt(listView, e.GetPosition(listView));
+            clsPersona personaSeleccionada = (clsPersona)((FrameworkElement)e.OriginalSource).DataContext;
+            this.listilla.SelectedItem = personaSeleccionada;
+        }
     }
 }
