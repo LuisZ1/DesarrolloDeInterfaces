@@ -73,9 +73,10 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
             }
             set {
                 _textoBuscado = value;
-                resultadoBusqueda = FiltrarListado(_textoBuscado) + "resultados";
+                resultadoBusqueda = FiltrarListado(_textoBuscado) + " resultados";
                 NotifyPropertyChanged("ListadoDePersonas");
                 NotifyPropertyChanged("resultadoBusqueda");
+                OcultarFormulario();
             }
         }
 
@@ -84,7 +85,7 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
                 return _resultadoBusqueda;
             }
             set {
-
+                _resultadoBusqueda = value;
             }
         }
 
@@ -101,14 +102,7 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
         }
         #endregion
 
-        #region otros métodos
-        //Al  utilizar clsBase no se necesita
-        //protected void OnPropertyChanged(string name) {
-        //    PropertyChangedEventHandler handler = PropertyChanged;
-        //    if (handler != null) {
-        //        handler(this, new PropertyChangedEventArgs(name));
-        //    }
-        //}
+        // ---- OTROS MÉTODOS ----
 
         #region eliminar
         public DelegateCommand eliminarCommand {
@@ -135,8 +129,7 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
                 ContentDialogResult resultado = await confirmarBorrado.ShowAsync();
 
                 if (resultado == ContentDialogResult.Secondary) {
-                    _ListadoDePersonas = _listadoPersonas_BL.listadoCompletoPersonas_BL();
-                    NotifyPropertyChanged("ListadoDePersonas");
+                    recargarListados();
                 }
 
             } catch (Exception) {
@@ -168,7 +161,7 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
 
         public void actualizarListaCommand_Executed() {
             try {
-                _ListadoDePersonas = _listadoPersonas_BL.listadoCompletoPersonas_BL();
+                recargarListados();
                 PersonaSeleccionada = null;
                 NotifyPropertyChanged("ListadoDePersonas");
             } catch (Exception) {
@@ -205,9 +198,8 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
                 confirmar.PrimaryButtonText = "Aceptar";
 
                 ContentDialogResult resultado = await confirmar.ShowAsync();
+                recargarListados();
 
-                _ListadoDePersonas = _listadoPersonas_BL.listadoCompletoPersonas_BL();
-                NotifyPropertyChanged("ListadoDePersonas");
             } catch (Exception) {
 
             } finally {
@@ -281,7 +273,7 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
             _ListadoDePersonas = new List<clsPersona>();
             _ListadoDePersonas = _ListadoDePersonasCompleto.Where(persona => persona.nombre.ToLower().Contains(texto.ToLower()) || persona.apellidos.ToLower().Contains(texto.ToLower())).ToList();
 
-            return 0;
+            return _ListadoDePersonas.Count();
         }
 
         #endregion
@@ -308,8 +300,14 @@ namespace _14_CRUDPersonas_UWP.ViewModels {
             NotifyPropertyChanged("esVisibleFormulario");
         }
 
-        #endregion
+        public void recargarListados() {
+            _ListadoDePersonas = _listadoPersonas_BL.listadoCompletoPersonas_BL();
+            _ListadoDePersonasCompleto = _ListadoDePersonas;
+            NotifyPropertyChanged("ListadoDePersonas");
+            NotifyPropertyChanged("ListadoDePersonasCompleto");
+        }
 
         #endregion
+
     }
 }
