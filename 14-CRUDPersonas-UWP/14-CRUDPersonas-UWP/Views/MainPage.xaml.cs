@@ -53,5 +53,6 @@ namespace _14_CRUDPersonas_UWP
             clsPersona personaSeleccionada = (clsPersona)((FrameworkElement)e.OriginalSource).DataContext;
             this.listilla.SelectedItem = personaSeleccionada;
         }
+        
     }
 }

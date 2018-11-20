@@ -70,7 +70,12 @@
             RelativePanel.AlignRightWithPanel="True"
             Background="LightSeaGreen">
 
-            <AppBarButton Icon="Refresh" Label="Actualizar" Foreground="White" Command="{Binding Path=actualizarListaCommand}"/>
+            <AppBarButton Icon="Refresh" Label="Actualizar" Foreground="White" Command="{Binding Path=actualizarListaCommand}">
+                <AppBarButton.KeyboardAccelerators>
+                    <KeyboardAccelerator 
+                    Modifiers="None" Key="F5" />
+                </AppBarButton.KeyboardAccelerators>
+            </AppBarButton>
             <AppBarButton Icon="Add" Label="Nuevo" Foreground="White" Command="{Binding Path=insertarPersonaCommand}" Name="btnNuevo" Click="btnNuevo_Click"/>
             <AppBarButton Icon="Save" Label="Guardar" Foreground="White" Command="{Binding Path=modificarPersonaCommand}" Name="btnGuardar"/>
             <AppBarButton Icon="Delete" Label="Eliminar" Foreground="White" Command="{Binding Path=eliminarCommand}"/>
@@ -84,7 +89,7 @@
                          PlaceholderText="Buscar" HorizontalContentAlignment="Center" BorderThickness="0" Text="{Binding Path=textoBuscado, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
             </Border>
         </StackPanel>
-        
+
     </RelativePanel>
-    
+
 </Page>
