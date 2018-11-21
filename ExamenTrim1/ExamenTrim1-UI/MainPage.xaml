@@ -1,0 +1,71 @@
+﻿<Page
+    x:Class="ExamenTrim1_UI.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExamenTrim1_UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    xmlns:vm ="using:ExamenTrim1_UI.Models.ViewModels">
+
+    <Page.DataContext>
+        <vm:MainPageViewModel></vm:MainPageViewModel>
+    </Page.DataContext>
+
+    <RelativePanel>
+
+        <!-- Header -->
+        <StackPanel  Name="header" Orientation="Vertical"
+                     RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+            <TextBlock Text="¿Quién quiere ser millonetis?" HorizontalAlignment="Center"  FontSize="25"/>
+            <TextBlock Text="Numero de aciertos" HorizontalAlignment="Center" FontSize="20"/>
+            <TextBlock Text="{Binding Path=contadorCartasLevantadas}" HorizontalAlignment="Center" Margin="0,0,10,0" FontSize="20"/>
+            
+        </StackPanel>
+
+        <!-- Grid para las cartas -->
+        <GridView 
+            Name="gd_listado" 
+            RelativePanel.Below="header" 
+            RelativePanel.AlignLeftWithPanel="True" 
+            RelativePanel.AlignRightWithPanel="True"
+            ItemsSource="{Binding listadoCartas, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+            SelectedItem="{Binding cartaSeleccionada, Mode=TwoWay}"
+            Margin="50,10,50,10"
+            Padding="20,0,20,0">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1" BorderBrush="Black" CornerRadius="15">
+                        <StackPanel Orientation="Vertical" Width="75" Height="75">
+                            <Image Source="{Binding Path=UriFoto, Mode=TwoWay ,UpdateSourceTrigger=PropertyChanged}" MaxHeight="100" MaxWidth="100" Margin="8"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+
+        <!-- Botonera inferior -->
+
+        <StackPanel 
+            Name="botonera"
+            Orientation="Horizontal" 
+            RelativePanel.AlignBottomWithPanel="True"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True"
+            Background="DimGray">
+
+            <AppBarButton Icon="Add" Label="Nuevo" Foreground="White" Command="{Binding Path=NuevaPartidaCommand}" Name="btnNuevo"/>
+            <AppBarButton Icon="Refresh" Label="Reiniciar" Foreground="White" Command="{Binding Path=ReiniciarPartidaCommand}">
+                <AppBarButton.KeyboardAccelerators>
+                    <KeyboardAccelerator 
+                    Modifiers="None" Key="F5" />
+                </AppBarButton.KeyboardAccelerators>
+            </AppBarButton>
+
+
+        </StackPanel>
+
+    </RelativePanel>
+
+</Page>
