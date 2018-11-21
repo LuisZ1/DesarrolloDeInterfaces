@@ -124,9 +124,10 @@ namespace ExamenTrim1_UI.Models.ViewModels {
             for(int i = 0; i < listadoCartas.Count(); i++) { //NO FUNCIONA BIEN
                 numeroAleatorio = miAleatorio.Next(0, 15);
                 while (!listaNumero.Contains(numeroAleatorio)) {
-                    
                     listaNumero.Add(numeroAleatorio);
                     listaAux.Add(listadoCartas[numeroAleatorio]);
+
+                    numeroAleatorio = miAleatorio.Next(0, 15);
                 }
             }
             listadoCartas = listaAux;
