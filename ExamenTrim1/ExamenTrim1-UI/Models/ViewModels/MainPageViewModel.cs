@@ -15,6 +15,7 @@ namespace ExamenTrim1_UI.Models.ViewModels {
         private clsCarta _cartaSelecionada;
         private int _contadorCartasLevantadas;
         private bool _haGanado;
+        private bool _esReinicio = true;
 
         private DelegateCommand _nuevaPartidaCommand;
         private DelegateCommand _reiniciarPartidaCommand;
@@ -32,11 +33,12 @@ namespace ExamenTrim1_UI.Models.ViewModels {
             get { return _cartaSelecionada; }
             set {
                 _cartaSelecionada = value;
-                AlternarEstadoCarta();
-                NotifyPropertyChanged("cartaSelecionada");
-                NotifyPropertyChanged("listadoCartas");
-                NotifyPropertyChanged("contadorCartasLevantadas");
-
+                if (_esReinicio) {
+                    AlternarEstadoCarta();
+                    NotifyPropertyChanged("cartaSelecionada");
+                    NotifyPropertyChanged("listadoCartas");
+                    NotifyPropertyChanged("contadorCartasLevantadas");
+                }
                 if (cartaSeleccionada.esBomba) {
                     MensajeLoser();
                 } else {
@@ -74,7 +76,6 @@ namespace ExamenTrim1_UI.Models.ViewModels {
         /// invirtiendolo
         /// </summary>
         public void AlternarEstadoCarta() {
-
             if (cartaSeleccionada.estado) {
                 OcultarCarta();
             } else {
@@ -122,13 +123,13 @@ namespace ExamenTrim1_UI.Models.ViewModels {
             int numeroAleatorio = -1;
 
             for(int i = 0; i < listadoCartas.Count(); i++) { //NO FUNCIONA BIEN
-                numeroAleatorio = miAleatorio.Next(0, 15);
-                while (!listaNumero.Contains(numeroAleatorio)) {
-                    listaNumero.Add(numeroAleatorio);
-                    listaAux.Add(listadoCartas[numeroAleatorio]);
+                
+                do {
+                    numeroAleatorio = miAleatorio.Next(0, 16);
+                } while (listaNumero.Contains(numeroAleatorio));
 
-                    numeroAleatorio = miAleatorio.Next(0, 15);
-                }
+                listaNumero.Add(numeroAleatorio);
+                listaAux.Add(listadoCartas[numeroAleatorio]);
             }
             listadoCartas = listaAux;
         }
@@ -150,7 +151,7 @@ namespace ExamenTrim1_UI.Models.ViewModels {
         /// Crea una nueva partida
         /// </summary>
         public void NuevaPartida() {
-            NuevaPartidaCommand();
+           NuevaPartidaCommand_Executed();
         }
 
         #region commands nueva partida
@@ -178,7 +179,7 @@ namespace ExamenTrim1_UI.Models.ViewModels {
         /// y reiniciando los contadores
         /// </summary>
         public void ReiniciarPartida() {
-            ReiniciarPartidaCommand();
+            ReiniciarPartidaCommand_Executed();
         }
 
         #region commands reiniciar partida
@@ -199,6 +200,7 @@ namespace ExamenTrim1_UI.Models.ViewModels {
                 listadoCartas[i].estado = false;
             }
             NotifyPropertyChanged("listadoCartas");
+            _esReinicio = true;
         }
 
         #endregion
@@ -215,7 +217,8 @@ namespace ExamenTrim1_UI.Models.ViewModels {
             ContentDialogResult resultado = await confirmar.ShowAsync();
 
             if (resultado == ContentDialogResult.Secondary) {
-                ReiniciarPartida();
+                //ReiniciarPartida();
+                ReiniciarPartidaCommand_Executed();
             } else {
                 NuevaPartida();
             }

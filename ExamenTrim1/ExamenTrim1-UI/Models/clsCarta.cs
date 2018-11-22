@@ -28,7 +28,14 @@ namespace ExamenTrim1_UI.Models {
             this.UriFoto = UriFoto;
             this.estado = estado;
         }
-        
+
+        public clsCarta() {
+            this.idCarta = 0;
+            this.esBomba = false;
+            this.UriFoto = UriFoto;
+            this.estado = false;
+        }
+
 
     }
 }
