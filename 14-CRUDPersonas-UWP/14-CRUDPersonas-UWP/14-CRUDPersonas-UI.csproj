@@ -96,6 +96,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\clsVMBase.cs" />
+    <Compile Include="ViewModels\Converters\clsDateTimeToDateTimeOffset.cs" />
+    <Compile Include="ViewModels\Converters\clsConversorFechaCorta.cs" />
     <Compile Include="ViewModels\DelegateCommand.cs" />
     <Compile Include="ViewModels\MainPageViewModel.cs" />
     <Compile Include="Views\MainPage.xaml.cs">

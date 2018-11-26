@@ -7,11 +7,18 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    xmlns:vm="using:_14_CRUDPersonas_UWP.ViewModels">
+    xmlns:vm="using:_14_CRUDPersonas_UWP.ViewModels"
+    xmlns:conv="using:_14_CRUDPersonas_UWP.ViewModels.Converters"
+    >
 
     <Page.DataContext>
         <vm:MainPageViewModel/>
     </Page.DataContext>
+
+    <Page.Resources>
+        <conv:clsConversorFechaCorta x:Key="convesorFechaCorta" />
+        <conv:DateTimeToDateTimeOffset x:Key="DateTimeToDateTimeOffset" />
+    </Page.Resources>
 
     <RelativePanel>
         <!-- Ponemos TwoWay para que la propiedad del ViewModel personaSeleccionada vaya cambiando -->
@@ -55,11 +62,17 @@
             <TextBlock Text="Apellidos:"/>
             <TextBox Name="txtApellidos" Text="{Binding PersonaSeleccionada.apellidos, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Apellidos" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
             <TextBlock Text="Fecha de nacimiento:"/>
-            <TextBox Name="txtfechaNacimiento" Text="{Binding PersonaSeleccionada.fechaNacimiento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Fecha de Nacimiento" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
+            <TextBox Name="txtfechaNacimiento" 
+                     Text="{Binding PersonaSeleccionada.fechaNacimiento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource convesorFechaCorta}}" 
+                     PlaceholderText="Fecha de Nacimiento" 
+                     BorderThickness="0,0,0,1" 
+                     Width="350" MaxWidth="550" 
+                     HorizontalAlignment="Left"/>
             <TextBlock Text="Teléfono:"/>
             <TextBox Name="txtTelefono" Text="{Binding PersonaSeleccionada.telefono, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Teléfono" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
             <TextBlock Text="Dirección:"/>
             <TextBox Name="txtDireccion" Text="{Binding PersonaSeleccionada.direccion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Dirección" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
+            <DatePicker Name="DatePicker" Date="{Binding PersonaSeleccionada.fechaNacimiento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DateTimeToDateTimeOffset}}"/>
         </StackPanel>
 
         <StackPanel 

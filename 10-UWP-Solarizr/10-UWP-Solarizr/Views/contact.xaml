@@ -21,7 +21,9 @@
                 <ColumnDefinition Width="5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="0,0,0,0" VerticalAlignment="Stretch">
+            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" 
+                        Grid.ColumnSpan="2" HorizontalAlignment="Stretch" 
+                        Margin="0,0,0,0" VerticalAlignment="Stretch">
                 <ListView Margin="20">
                     <ListViewItem>Jefe de Zona</ListViewItem>
                     <ListViewItem>Fernando Galiana</ListViewItem>

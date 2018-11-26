@@ -7,14 +7,32 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\resources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <LinearGradientBrush x:Key="buttonBackground">
+                <GradientStop Offset="0" Color="Silver"/>
+                <GradientStop Offset="1" Color="Orange"/>
+            </LinearGradientBrush>
+
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock 
+            Text="No tienes mensajes nuevos" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"/>
+
+        <Button Background="{StaticResource buttonBackground}" Name="boton1"> Hola </Button>
+        <Button Background="{StaticResource buttonBackgroundAPP}" Name="boton2" RelativePanel.Below="boton1">Hola</Button>
+        <Button Background="{StaticResource buttonBackgroundDICCIONARIO}" Name="boton3" RelativePanel.Below="boton2">Hola</Button>
 
 
-
-        <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock 
-                        Text="No tienes mensajes nuevos" 
-                        HorizontalAlignment="Center" 
-                        VerticalAlignment="Center"/>
-        </RelativePanel>
+    </RelativePanel>
 
 </Page>

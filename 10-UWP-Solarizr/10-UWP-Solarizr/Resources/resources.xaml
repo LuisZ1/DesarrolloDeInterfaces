@@ -1,0 +1,11 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_10_UWP_Solarizr.Resources">
+
+    <LinearGradientBrush x:Key="buttonBackgroundDICCIONARIO">
+        <GradientStop Offset="0" Color="Red"/>
+        <GradientStop Offset="1" Color="Purple"/>
+    </LinearGradientBrush>
+
+</ResourceDictionary>
