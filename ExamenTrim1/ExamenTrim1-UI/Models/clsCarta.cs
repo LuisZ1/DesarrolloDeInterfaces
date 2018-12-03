@@ -18,7 +18,6 @@ namespace ExamenTrim1_UI.Models {
                 NotifyPropertyChanged("UriFoto");
             }
         }
-
         public bool estado { get; set; }
         
 

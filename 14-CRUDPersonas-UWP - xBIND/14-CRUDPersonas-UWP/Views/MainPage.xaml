@@ -8,10 +8,11 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     xmlns:vm="using:_14_CRUDPersonas_UWP.ViewModels"
-    xmlns:conv="using:_14_CRUDPersonas_UWP.ViewModels.Converters"
-    >
+    xmlns:conv="using:_14_CRUDPersonas_UWP.ViewModels.Converters">
 
-    <Page.DataContext>
+    <Grid></Grid>
+    
+    <!--<Page.DataContext>
         <vm:MainPageViewModel/>
     </Page.DataContext>
 
@@ -22,8 +23,6 @@
     </Page.Resources>
 
     <RelativePanel>
-        <!-- Ponemos TwoWay para que la propiedad del ViewModel personaSeleccionada vaya cambiando -->
-        <!--SelectionChanged="listaPersonas_SelectionChanged"-->
         <TextBlock Text="{x:Bind ViewModel.resultadoBusqueda}" Name="resultadoBusqueda" Margin="10,2,2,2" Padding="2" FontSize="10"/>
         <ListView 
             Name="listilla"  
@@ -60,11 +59,11 @@
             Visibility="{x:Bind ViewModel.esVisibleFormulario}">
             <TextBlock Text="Nombre:"/>
             <TextBox Name="txtNombre" Text="{x:Bind ViewModel.PersonaSeleccionada.nombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Nombre" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
-            <!--<TextBox Name="txtNombre" Text="{Binding PersonaSeleccionada.nombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Nombre" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>-->
+            <TextBox Name="txtNombre" Text="{Binding PersonaSeleccionada.nombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Nombre" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
             <TextBlock Text="Apellidos:"/>
             <TextBox Name="txtApellidos" Text="{x:Bind ViewModel.PersonaSeleccionada.apellidos, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Apellidos" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
             <TextBlock Text="Fecha de nacimiento:"/>
-            <!--Converter={StaticResource convesorFechaCorta}-->
+            --><!--Converter={StaticResource convesorFechaCorta}--><!--
             <TextBox Name="txtfechaNacimiento" 
                      Text="{x:Bind ViewModel.PersonaSeleccionada.fechaNacimiento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource convesorFechaCorta}}" 
                      PlaceholderText="Fecha de Nacimiento" 
@@ -76,7 +75,7 @@
             <TextBlock Text="Dirección:"/>
             <TextBox Name="txtDireccion" Text="{x:Bind ViewModel.PersonaSeleccionada.direccion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Dirección" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
             <DatePicker Name="DatePicker" Date="{x:Bind ViewModel.PersonaSeleccionada.fechaNacimiento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DateTimeToDateTimeOffset}}"/>
-            <!--, Converter={StaticResource DateTimeToDateTimeOffset}-->
+            --><!--, Converter={StaticResource DateTimeToDateTimeOffset}--><!--
         </StackPanel>
 
         <StackPanel 
@@ -107,6 +106,6 @@
             </Border>
         </StackPanel>
 
-    </RelativePanel>
+    </RelativePanel>-->
 
 </Page>
