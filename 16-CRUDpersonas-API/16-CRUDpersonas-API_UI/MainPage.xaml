@@ -1,0 +1,108 @@
+﻿<Page
+    x:Class="_16_CRUDpersonas_API_UI.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_16_CRUDpersonas_API_UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    xmlns:vm="using:_16_CRUDpersonas_UI.ViewModels">
+    
+    <Page.DataContext>
+        <vm:MainPageViewModel/>
+    </Page.DataContext>
+
+    <!--<Page.Resources>
+        <conv:clsConversorFechaCorta x:Key="convesorFechaCorta" />
+        <conv:DateTimeToDateTimeOffset x:Key="DateTimeToDateTimeOffset" />
+    </Page.Resources>-->
+
+    <RelativePanel>
+        <!-- Ponemos TwoWay para que la propiedad del ViewModel personaSeleccionada vaya cambiando -->
+        <!--SelectionChanged="listaPersonas_SelectionChanged"-->
+        <TextBlock Text="{Binding resultadoBusqueda}" Name="resultadoBusqueda" Margin="10,2,2,2" Padding="2" FontSize="10"/>
+        <ListView 
+            Name="listilla"  
+            RightTapped="listilla_RightTapped"
+            ItemsSource="{Binding ListadoDePersonas}" 
+            SelectedItem="{Binding PersonaSeleccionada, Mode=TwoWay}" 
+            RelativePanel.Above="botonera"
+            RelativePanel.Below="resultadoBusqueda"
+            RelativePanel.AlignTopWithPanel="false"
+            Margin="5,5,20,5">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding Path=nombre}" FontSize="16"/>
+                        <TextBlock Text="{Binding Path=apellidos}" Margin="5,0,0,0" FontSize="12"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+            <ListView.Resources>
+                <MenuFlyout x:Name="miMenuFlyoutListado">
+                    <MenuFlyoutItem Command="{Binding Path=modificarPersonaCommand}" Icon="Edit" Text="Guardar cambios"/>
+                    <MenuFlyoutItem Command="{Binding Path=eliminarCommand}" Icon="Delete" Text="Eliminar"/>
+                </MenuFlyout>
+            </ListView.Resources>
+        </ListView>
+
+        <StackPanel 
+            Orientation="Vertical" 
+            RelativePanel.RightOf="listilla" 
+            Margin="10,10,50,10" 
+            RelativePanel.AlignRightWithPanel="True" 
+            Padding="10"
+            Visibility="{Binding esVisibleFormulario}">
+            <TextBlock Text="Nombre:"/>
+            <TextBox Name="txtNombre" Text="{Binding PersonaSeleccionada.nombre, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Nombre" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
+            <TextBlock Text="Apellidos:"/>
+            <TextBox Name="txtApellidos" Text="{Binding PersonaSeleccionada.apellidos, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Apellidos" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
+            <TextBlock Text="Fecha de nacimiento:"/>
+            <!--Converter={StaticResource convesorFechaCorta}-->
+            <TextBox Name="txtfechaNacimiento" 
+                     Text="{Binding PersonaSeleccionada.fechaNacimiento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                     PlaceholderText="Fecha de Nacimiento" 
+                     BorderThickness="0,0,0,1" 
+                     Width="350" MaxWidth="550" 
+                     HorizontalAlignment="Left"/>
+            <TextBlock Text="Teléfono:"/>
+            <TextBox Name="txtTelefono" Text="{Binding PersonaSeleccionada.telefono, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Teléfono" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
+            <TextBlock Text="Dirección:"/>
+            <TextBox Name="txtDireccion" Text="{Binding PersonaSeleccionada.direccion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" PlaceholderText="Dirección" BorderThickness="0,0,0,1" Width="350" MaxWidth="550" HorizontalAlignment="Left"/>
+            <DatePicker Name="DatePicker" Date="{Binding PersonaSeleccionada.fechaNacimiento, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <!--, Converter={StaticResource DateTimeToDateTimeOffset}-->
+        </StackPanel>
+
+        <StackPanel 
+            Name="botonera"
+            Orientation="Horizontal" 
+            RelativePanel.AlignBottomWithPanel="True"
+            RelativePanel.AlignLeftWithPanel="True"
+            RelativePanel.AlignRightWithPanel="True"
+            Background="LightSeaGreen">
+
+            <AppBarButton Icon="Refresh" Label="Actualizar" Foreground="White" Command="{Binding Path=actualizarListaCommand}">
+                <AppBarButton.KeyboardAccelerators>
+                    <KeyboardAccelerator 
+                    Modifiers="None" Key="F5" />
+                </AppBarButton.KeyboardAccelerators>
+            </AppBarButton>
+            <AppBarButton Icon="Add" Label="Nuevo" Foreground="White" Command="{Binding Path=insertarPersonaCommand}" Name="btnNuevo" Click="btnNuevo_Click"/>
+            <AppBarButton Icon="Save" Label="Guardar" Foreground="White" Command="{Binding Path=modificarPersonaCommand}" Name="btnGuardar"/>
+            <AppBarButton Icon="Delete" Label="Eliminar" Foreground="White" Command="{Binding Path=eliminarCommand}"/>
+
+        </StackPanel>
+
+        <StackPanel RelativePanel.AlignTopWith="botonera" RelativePanel.AlignRightWithPanel="True" 
+                    RelativePanel.AlignBottomWithPanel="True" VerticalAlignment="Center">
+            <Border BorderThickness="1" CornerRadius="10" Margin="0,0,20,0" VerticalAlignment="Center">
+                <TextBox Name="barraBusqueda" Width="200px" MaxWidth="300" 
+                         PlaceholderText="Buscar" HorizontalContentAlignment="Center" BorderThickness="0" Text="{Binding Path=textoBuscado, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            </Border>
+        </StackPanel>
+
+    </RelativePanel>
+
+</Page>
