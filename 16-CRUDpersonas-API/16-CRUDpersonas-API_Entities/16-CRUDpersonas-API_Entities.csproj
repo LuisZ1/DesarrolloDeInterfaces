@@ -111,6 +111,7 @@
     <Compile Include="clsListadoDepartamentos.cs" />
     <Compile Include="clsListadoPersonas.cs" />
     <Compile Include="clsPersona.cs" />
+    <Compile Include="clsUriBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\_16_CRUDpersonas_API_Entities.rd.xml" />
   </ItemGroup>

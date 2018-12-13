@@ -109,6 +109,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="connection\clsURIBase.cs" />
     <Compile Include="lists\clsListadoPersonas_DAL.cs" />
+    <Compile Include="management\clsManejadoraPersonas_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\_16_CRUDpersonas_API_DAL.rd.xml" />
   </ItemGroup>
@@ -126,9 +127,7 @@
       <Name>16-CRUDpersonas-API_Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="management\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

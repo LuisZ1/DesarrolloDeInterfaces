@@ -16,31 +16,22 @@ namespace _16_CRUDpersonas_API_DAL.lists {
 
         public async Task<List<clsPersona>> getListadoPersonas(){
 
-            clsURIBase clsuri = new clsURIBase();
-            Uri uri = null;
-            uri = new Uri(clsuri.getUri()+"personas/");
-            List<clsPersona> listaPersonas = new List<clsPersona>();
+            clsUriBase gestoriaApi = new clsUriBase();
+            String uri = gestoriaApi.getUriBase();
+            Uri UriApi = new Uri(uri);
+            List<clsPersona> lista = null;
+            string ret;
+            HttpClient client = new HttpClient();
+            HttpResponseMessage response = await client.GetAsync(UriApi);
 
-            HttpClient httpClient = new HttpClient();
-            HttpResponseMessage httpResponse = new HttpResponseMessage();
-            string httpResponseBody = "";
+            if (response.IsSuccessStatusCode) {
+                ret = await response.Content.ReadAsStringAsync();
+                lista = JsonConvert.DeserializeObject<List<clsPersona>>(ret);
+            } else {
 
-            try {
-                //Send the GET request
-                httpResponse = await httpClient.GetAsync(uri);
-                httpResponse.EnsureSuccessStatusCode();
-                httpResponseBody = await httpResponse.Content.ReadAsStringAsync();
-
-                //deserializar
-                if(httpResponse != null) {
-                    listaPersonas = JsonConvert.DeserializableObject<List<clsPersona>>(httpResponse);
-                }
-
-            } catch (Exception ex) {
-                httpResponseBody = "Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message;
             }
 
-            return listaPersonas;
+            return lista;
         }
 
     }
