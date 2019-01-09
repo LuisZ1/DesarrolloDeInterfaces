@@ -24,7 +24,6 @@
         <TextBlock Text="{Binding resultadoBusqueda}" Name="resultadoBusqueda" Margin="10,2,2,2" Padding="2" FontSize="10"/>
         <ListView 
             Name="listilla"  
-            RightTapped="listilla_RightTapped"
             ItemsSource="{Binding ListadoDePersonas}" 
             SelectedItem="{Binding PersonaSeleccionada, Mode=TwoWay}" 
             RelativePanel.Above="botonera"
@@ -89,7 +88,7 @@
                     Modifiers="None" Key="F5" />
                 </AppBarButton.KeyboardAccelerators>-->
             </AppBarButton>
-            <AppBarButton Icon="Add" Label="Nuevo" Foreground="White" Command="{Binding Path=insertarPersonaCommand}" Name="btnNuevo" Click="btnNuevo_Click"/>
+            <AppBarButton Icon="Add" Label="Nuevo" Foreground="White" Command="{Binding Path=insertarPersonaCommand}" Name="btnNuevo" />
             <AppBarButton Icon="Save" Label="Guardar" Foreground="White" Command="{Binding Path=modificarPersonaCommand}" Name="btnGuardar"/>
             <AppBarButton Icon="Delete" Label="Eliminar" Foreground="White" Command="{Binding Path=eliminarCommand}"/>
 
