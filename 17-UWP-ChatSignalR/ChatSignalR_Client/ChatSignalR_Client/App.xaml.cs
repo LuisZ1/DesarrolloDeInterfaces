@@ -41,7 +41,8 @@ namespace ChatSignalR_Client
             SignalR();
         }
         public void SignalR() {
-            conn = new HubConnection("https://chatdeclase.azurewebsites.net");
+            //conn = new HubConnection("http://localhost:59986/");
+            conn = new HubConnection("https://chatnervion.azurewebsites.net");
             proxy = conn.CreateHubProxy("ChatHub");
             conn.Start();
 

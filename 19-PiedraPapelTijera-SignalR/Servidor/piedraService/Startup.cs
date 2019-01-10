@@ -1,9 +1,9 @@
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(chatdeclaseService.Startup))]
+[assembly: OwinStartup(typeof(piedraService.Startup))]
 
-namespace chatdeclaseService
+namespace piedraService
 {
     public partial class Startup
     {
