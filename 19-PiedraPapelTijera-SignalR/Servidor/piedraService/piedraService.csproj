@@ -160,7 +160,9 @@
     <Compile Include="App_Start\Startup.MobileApp.cs" />
     <Compile Include="Controllers\TodoItemController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="DataObjects\jugada.cs" />
     <Compile Include="DataObjects\TodoItem.cs" />
+    <Compile Include="Hubs\piedraHub.cs" />
     <Compile Include="Models\piedraContext.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
