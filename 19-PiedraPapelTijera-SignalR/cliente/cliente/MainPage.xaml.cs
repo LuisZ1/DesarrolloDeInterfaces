@@ -33,13 +33,16 @@ namespace cliente {
         public MainPage() {
             this.InitializeComponent();
             //this.Suspending += OnSuspending;
+            btn_Enviar.IsEnabled = false;
             SignalR();
+
         }
 
         private void btn_piedraClick(object sender, RoutedEventArgs e) {
             miJugada.nombreJugador = txtbox_nombreJugador.Text;
             miJugada.jugadaHecha = 1;
             seleccionado = true;
+            btn_Enviar.IsEnabled = true;
             txt_ganador.Text = "selecionado piedra";
         }
 
@@ -47,6 +50,7 @@ namespace cliente {
             miJugada.nombreJugador = txtbox_nombreJugador.Text;
             miJugada.jugadaHecha = 2;
             seleccionado = true;
+            btn_Enviar.IsEnabled = true;
             txt_ganador.Text = "selecionado papel";
         }
 
@@ -54,6 +58,7 @@ namespace cliente {
             miJugada.nombreJugador = txtbox_nombreJugador.Text;
             miJugada.jugadaHecha = 3;
             seleccionado = true;
+            btn_Enviar.IsEnabled = true;
             txt_ganador.Text = "selecionado tijera";
         }
 
@@ -67,16 +72,20 @@ namespace cliente {
         }
 
         public void SignalR() {
-            //conn = new HubConnection("http://piedra.azurewebsites.net/");
-            conn = new HubConnection("http://localhost:50008/");
+            conn = new HubConnection("http://piedra.azurewebsites.net/");
+            //conn = new HubConnection("http://localhost:50008/");
             proxy = conn.CreateHubProxy("piedraHub");
             conn.Start();
 
-            proxy.On/*<String, int>*/("waitAlOtro", waitAlOtro);
+            proxy.On("waitAlOtro", waitAlOtro);
+            proxy.On<String>("broadcastMessage", Broadcast);
         }
 
-        public void Broadcast(jugada jugada) {
-            proxy.Invoke("Send", jugada);
+        public async void Broadcast(String resultado) {
+            await Windows.ApplicationModel.Core.CoreApplication.MainView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => {
+                txt_ganador.Text = resultado;
+                btn_Enviar.IsEnabled = true;
+            });
         }
 
         public async void waitAlOtro() {
