@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="lists\clsListadoPersonas_BL.cs" />
+    <Compile Include="management\mngPersonasBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\_16_CRUDpersonas_API_BL.rd.xml" />
   </ItemGroup>

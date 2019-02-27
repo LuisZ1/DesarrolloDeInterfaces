@@ -9,9 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     xmlns:vm="using:_16_CRUDpersonas_API_UI.ViewModels">
     
-    <!--<Page.DataContext>
+    <Page.DataContext>
         <vm:MainPageViewModel/>
-    </Page.DataContext>-->
+    </Page.DataContext>
 
     <!--<Page.Resources>
         <conv:clsConversorFechaCorta x:Key="convesorFechaCorta" />
